@@ -15,8 +15,8 @@
     </p>
     <a target="_blank" href="https://www.jd.com/">在新窗口打开京东</a>
     <a target="_blank" href="mailto:1624490717@qq.com">点我发邮件</a>
-    <a target="_blank" href="#123">点我跳到页面底部</a>
-    <a target="_blank" href="download">点我下载文件</a>
+    <a href="#123">点我跳到页面底部</a>
+    <a href="download">点我下载文件</a>
     <br>
     <img src="https://drscdn.500px.org/photo/229389427/m%3D1170/v2?user_id=7012987&webp=true&sig=196fa0c161aa562478d08571764872f7d69a346c3c0b2e12aa00e2c6414eb28b"
         width="200" height="200" />
@@ -67,7 +67,8 @@
         <dd>李四</dd>
     </dl>
     <hr>
-    <form> <span style="font-weight: bold;">Google搜索</span>
+    <form>
+        <span style="font-weight: bold;">Google搜索</span>
         <br>
         <input type="text">
         <input type="button" value="在新窗口下打开搜索结果">
@@ -91,6 +92,7 @@
             </dt>
             <dd>
                 <select>
+                    <option hidden value="">请选择</option>
                     <optgroup label="少年">
                         <option value="">1到6岁</option>
                         <option value="">6到12岁</option>
@@ -149,6 +151,52 @@
         <button type="submit">提交</button>
         <button type="reset">重置</button>
     </form>
+    <table border="1">
+        <col>
+        <col bgcolor=red>
+        <tbody>
+            <tr>
+                <th>编号</th>
+                <th>品名</th>
+                <th>进价</th>
+                <th>出价</th>
+            </tr>
+            <tr>
+                <td>aaa</td>
+                <td>aaa</td>
+                <td rowspan="2">5</td>
+                <td>aaa</td>
+            </tr>
+            <tr>
+                <td>aaa</td>
+                <td>aaa</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>aaa</td>
+                <td>aaa</td>
+                <td>aaa</td>
+                <td>aaa</td>
+            </tr>
+            <tr>
+                <td>aaa</td>
+                <td>aaa</td>
+                <td>aaa</td>
+                <td>aaa</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <img width="300" height="300" usemap="#lpl"
+        src="https://drscdn.500px.org/photo/174778125/m%3D1170_k%3D1/2841ccf2a3720e8e794a6a6930f6ff2c">
+    <map name="lpl">
+        <area coords="90,90,330,420" href="#">
+    </map>
+    <hr>
+    <a target="zz" href="http://www.mi.com">小米</a>
+    <br>
+    <iframe name="zz" src="https://www.taobao.com"></iframe>
+
 
 
     <p id="123">页面底部</p>
