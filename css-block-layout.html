@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <meta http-equiv="refresh" content="1">
+    <style>
+        header {
+            background-color: black;
+            margin-bottom: 20px;
+        }
+
+        [class="p1"] {
+            color: white;
+            width: 600px;
+            margin: auto;
+        }
+
+        p.p2 {
+            width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #d1 {
+            width: 600px;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+
+        #d1 div {
+            width: 180px;
+            height: 40px;
+            box-sizing: border-box;
+            border: 3px solid;
+            line-height: 34px;
+            text-align: center;
+            background-color: pink;
+            margin-bottom: 15px;
+        }
+
+        #d1 div:nth-child(n+5) {
+            margin-left: 207px;
+        }
+
+        #d1 div:nth-child(n+9) {
+            margin-left: 414px;
+        }
+
+        #d1 div:nth-child(4n+5) {
+            margin-top: -220px;
+        }
+
+        p.p3 {
+            width: 600px;
+            margin: auto;
+        }
+
+        .p3 {
+            border-bottom: 1px dotted;
+        }
+
+        .p3.p4 {
+            border-bottom: none;
+        }
+
+        .p5 {
+
+            text-align: center;
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+
+
+
+<body style="">
+    <header>
+        <p class="p1">hello world 请调整浏览器窗口大小查看效果</p>
+    </header>
+    <p class="p2">页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体
+        宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px
+        页面主体 宽度600px 页面主体 宽度600px</p>
+    <div id="d1">
+        <div>宽180高40(包含边框)</div>
+        <div>产品</div>
+        <div>产品</div>
+        <div>水平间隙30px</div>
+        <div>产品</div>
+        <div>产品</div>
+        <div>垂直间隙15px</div>
+        <div>产品</div>
+        <div>产品</div>
+        <div>边框宽度3px</div>
+        <div>产品</div>
+        <div>产品</div>
+    </div>
+    <p class="p3">link</p>
+    <p class="p3">link</p>
+    <p class="p3">link</p>
+    <p class="p3">link</p>
+    <p class="p3 p4">link</p>
+    <p class="p5">©版权所有<br>本页所有布局均使用块元素</p>
+</body>
+
+</html>
