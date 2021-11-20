@@ -1,44 +1,48 @@
 <html>
 
 <head>
+    <title></title>
     <style>
         body {
             margin: 0;
+            border: 0;
         }
 
         .wordList {
-            border-right: 3px solid black;
-            background-color: rgb(128, 128, 139);
-            width: 200px;
-            height: 100%;
-            overflow: auto;
+            box-sizing: border-box;
             display: inline-block;
+            height: 100%;
+            width: 200px;
+            overflow: auto;
+            background-color: cadetblue;
+            border-right: 1px solid black;
 
         }
 
-        h1 {
+        .wordList h1 {
             text-align: right;
             font-size: 20px;
         }
 
-        ul li {
-            list-style: none;
-
+        .word h2 {
+            border-bottom: 2px solid black;
         }
 
         .dictContent {
-            width: calc(100% - 618px);
+            width: calc(100% - 626px);
             height: 100%;
             display: inline-block;
+            box-sizing: border-box;
             overflow: auto;
         }
 
         .vocabulary {
-            width: 200px;
-            height: 100%;
-            background-color: cornflowerblue;
             display: inline-block;
+            box-sizing: border-box;
+            height: 100%;
+            width: 200px;
             overflow: auto;
+            background-color: cadetblue;
         }
 
         .vocabulary h2 {
@@ -46,11 +50,12 @@
         }
 
         .history {
-            width: 200px;
-            height: 100%;
-            background-color: cornflowerblue;
             display: inline-block;
+            box-sizing: border-box;
+            height: 100%;
+            width: 200px;
             overflow: auto;
+            background-color: cadetblue;
         }
 
         .history h2 {
@@ -179,20 +184,24 @@
                 <ol>
                     <li>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore reprehenderit porro sequi
-                        commodi atque
+                        commodi
+                        atque
                         vitae quae at nemo consequatur culpa repellendus sit praesentium, temporibus architecto quas hic
                         ipsum
                         repellat quia!
                     </li>
                     <li>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores at est ipsam porro minus ab
-                        odio placeat
+                        odio
+                        placeat
                         explicabo incidunt dignissimos distinctio magni adipisci ut ex perferendis illum, praesentium
-                        eum quidem?
+                        eum
+                        quidem?
                     </li>
                     <li>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto tenetur eligendi nobis iste
-                        harum, dolorum
+                        harum,
+                        dolorum
                         deleniti rem enim consequuntur voluptatum explicabo iure! Provident esse eaque ex aut quo dolor
                         inventore!
                     </li>
@@ -201,12 +210,11 @@
         </div>
         <div class="vocabulary">
             <h2>Vocabulary</h2>
-
         </div>
         <div class="history">
             <h2>History</h2>
         </div>
     </div>
-    </bady>
+</body>
 
 </html>
