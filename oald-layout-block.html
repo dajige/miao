@@ -7,11 +7,13 @@
             margin: 0;
             border: 0;
             font-size: 0;
+            /* min-width: 800px; */
+
         }
 
         .wordList {
             box-sizing: border-box;
-            display: inline-block;
+            /* display: inline-block; */
             height: 100%;
             width: 200px;
             overflow: auto;
@@ -32,16 +34,19 @@
 
 
         .dictContent {
-            width: calc(100% - 626px);
+            width: calc(100% - 603px);
             height: 100%;
             display: inline-block;
             box-sizing: border-box;
             overflow: auto;
             font-size: 16px;
+            position: fixed;
+            top: 0px;
+            left: 200px;
         }
 
         .vocabulary {
-            display: inline-block;
+            /* display: inline-block; */
             box-sizing: border-box;
             height: 100%;
             width: 200px;
@@ -50,6 +55,11 @@
             font-size: 16px;
             border-left: 1px solid black;
             border-right: 1px solid black;
+            position: fixed;
+            top: 0px;
+            left: 1010px;
+
+
         }
 
         .vocabulary h2 {
@@ -64,10 +74,12 @@
             overflow: auto;
             background-color: cadetblue;
             font-size: 16px;
+            position: fixed;
+            top: 0px;
+            left: 1210px;
         }
 
         .word h2 {
-            text-align: right;
             border-bottom: 2px solid black;
         }
     </style>
