@@ -1,45 +1,47 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <style>
         body {
             margin: 0;
-            list-style-type: none;
         }
+
 
         .header {
             height: 100px;
             background-color: cornflowerblue;
         }
 
-
-
-        .sidbar {
-            overflow: auto;
-            background-color: coral;
-            width: 200px;
-            box-sizing: border-box;
-            height: calc(100vh - 100px);
-            float: left;
+        .flex {
+            display: flex;
+            width: 100%;
 
         }
 
-        .main {
-            background-color: yellow;
-            overflow: auto;
-            position: absolute;
-            top: 100px;
-            left: 200px;
+        .sidbar {
+            background-color: brown;
+            width: 200px;
             height: calc(100vh - 100px);
-            float: right;
+            overflow: auto;
+        }
+
+        .main {
+            width: calc(100% - 200px);
+            height: calc(100vh - 100px);
+            background-color: chartreuse;
+            overflow: auto;
         }
     </style>
 </head>
 
 <body>
-
-    <body>
-        <div class="header"></div>
+    <div class="header"></div>
+    <div class="flex">
         <div class="sidbar">
             <ul>
                 <li></li>
@@ -232,6 +234,7 @@
             visibility：hidden 隐藏占位 overflow: hidden 超出部分隐藏 行内元素的边框不会影响内容布局 每个文本字体都有em框包裹，em框大小由字体大小决定，多个em框连接形成文本框
             行内元素的行高只能靠更换字体或者改变字体大小改变 行内框的高度为light高度 vertical-align:调节行内文本的上下位置
             当行内块元素触发bfc[overflow-hidden]时，以marginbox的底边为基线对齐</div>
-    </body>
+    </div>
+</body>
 
 </html>
