@@ -1,0 +1,316 @@
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.headerbox{
+   width: 100%; 
+   height: 40px;
+   line-height: 40px;
+   background-color: #333;
+}
+.header ul  {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.header{
+    width: 1226px;
+    margin: 0 auto;
+    font-size: 12px;
+}
+.header-a ul li{
+    float: left;
+    position: relative;
+}
+.header-b{
+    float: right;
+}
+
+.header ul li a {
+    color: #b0b0b0;
+    text-decoration: none;
+}
+.header ul li span {
+    color: #424242;
+    text-decoration: none;
+    margin: 0 .3em;
+}.header a:hover{
+    color: white;
+}
+.car{
+    width: 120px;
+    height: 40px;
+    background-color: #424242;
+    margin-left: 25px;
+    padding-left: 10px;
+    text-align: center;
+    position: relative;
+}
+.car:hover a{
+    color: rgb(255, 103,0);
+}
+.car:hover{
+    background-color: white;
+}
+.header-c{
+    /* display: none; */
+    width: 316px;
+    height:0px;
+    background-color: white;
+overflow: hidden;
+    box-shadow: 0 2px 10px rgb(0, 0, 0,.15);
+    position: absolute;
+    right: 0;
+    top: 40px;
+    line-height: 100px;
+    transition: all .3s;
+    z-index: 10;
+}
+.car:hover .header-c{
+    height: 100px;
+}
+.header-d{
+    width: 124px;
+    height: 0;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 1px 5px #aaa;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    margin-left: -62px;
+    transition: all .3s;
+    z-index: 10;
+}
+.header-d img{
+    width: 90px;
+    margin: 18px 0 12px;
+    padding-left: 16.5px;
+
+}
+
+.header-d p{
+    color: #333;
+    font-size: 14px;
+   line-height: 14px;
+   text-align: center;
+  margin-top: -15px;
+}
+.app:hover .header-d{
+    height: 148px;
+}
+.app:hover .header-d a{
+    height: 148px;
+}
+/* 头部结束 */
+   .nav{
+       width: 100%;
+       height: 100px;
+       position: relative;
+   }
+.warp{
+    display: flex;
+    align-items:center;
+    width: 1226px;
+    height: 100%;
+    margin: 0 auto;
+}
+.loge{
+    /* float: left; */
+    width: 56px;
+    height: 56px;
+}
+.nav1{
+    /* float: left; */
+width: 874px;
+height: 100px;
+line-height: 100px;
+display: block;
+padding-left: 127px;
+box-sizing: border-box;
+
+}
+.nav2{
+    /* float: left; */
+    height: 50px;
+    width: 296px;
+}
+.loge img{
+    height: 100%;
+}
+.nav1 ul{
+    padding: 0;
+    margin: 0;
+}
+.nav1 ul li{
+    float: left;
+    padding: 0 10px;
+    list-style-type: none;
+}
+.nav1 ul li a{
+    color: #333;
+    text-decoration: none;
+}
+.nav1 ul li:hover a{
+    color: rgb(255, 103, 0);
+}
+.nav-a{
+    border-top: 1px solid rgb(224, 224, 224);
+    position: absolute;
+    left: 0;
+    top: 100px;
+    display: none;
+   width: 100%;
+   height: 230px;
+   /* background-color: pink; */
+   box-shadow: 0 3px 4px rgb(0, 0, 0,.18);
+}
+.nav1 li:hover>.nav-a{
+    display: block;
+}
+.woca{
+    display: flex;
+    width: 1226px;
+    margin: 20px auto;
+}
+.woca img{
+width: 204px;
+}
+.woca-1{
+    font-size: 12px;
+    text-align: center;
+    line-height: 100%;
+
+}
+.nav-b{
+    width: 100%;
+    height: 230px;
+        position:absolute;
+        left:0;
+        box-shadow: 0 3px 4px rgb(0, 0, 0,.18);
+         border-top: 1px solid rgb(224, 224, 224);
+         display: none;
+}
+.nav1 li:hover>.nav-b{
+    display: block;
+}
+.woca-a{
+    display: flex;
+    width: 1226px;
+    margin: 20px auto;
+}
+/* ---------------------------------------------------------- */
+.nav2{
+    position: relative;
+}
+.nav2>input{
+width: 223px;
+height: 48px;
+padding: 0 10px;
+border: 1px solid #e0e0e0;
+outline: none;
+float: left;
+}
+.nav2>button{
+height: 50px;
+width: 50px;
+float: left;
+outline: none;
+border: 1px solid #e0e0e0;
+background-color: white;
+}
+
+.nav2 button:hover{
+   background-color:  rgb(255, 103, 0);
+}
+.nav2 input:hover{
+    border-color: rgb(255, 103, 0);
+}
+.nav2 input:hover~button{
+    border-color:rgb(255, 103, 0) ;
+}
+.nav2-a{
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 243px;
+    height: 240px;
+    border: 1px solid rgb(255, 103, 0);
+    border-top: none;
+    display: none;
+}
+.nav2>input:focus~.nav2-a{
+    display: block;
+}
+/* 第二部分结束 */
+/* ----------------------------------------------------------------- */
+.apple{
+    width: 100%;
+    height: 460px;
+    background-color: royalblue;
+}
+.apple-box{
+    display: flex;
+    margin: 0 auto;
+    width: 1226px;
+    height: 460px;
+    background-color: pink;
+}
+.apple-a{
+    box-sizing: border-box;
+    width: 234px;
+    height: 460px;
+    padding:20px 0;
+    background-color:rgba(0, 0, 0, .3);
+}
+.apple-a ul {
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+    padding-left: 30px;
+}
+.apple-a ul li{
+    height: 42px;
+    line-height: 42px;
+    color: white;
+}
+.apple-a ul li:hover{
+    background-color: rgb(255, 103,0);
+}
+.apple-b{
+    width: 992px;
+    height: 460px;
+    background-color: red;
+}
+
+.apple-b .apple-photo{
+    height: 100%;
+    position: relative;
+}
+.apple-b input{
+    display: none;
+}
+.apple-b .apple-photo .apple-c{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.apple-b .apple-photo .apple-c img{
+    width: 100%;
+    height: 100%;
+} 
+ .apple-b .apple-photo .apple-c label{
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 70px;
+    line-height: 70px;
+} 
+.apple-b .apple-photo.apple-c:first-child{
+    left: 0;
+}
+.apple-b .apple-photo.apple-c:nth-child(2){
+    right:0;
+}
