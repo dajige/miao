@@ -248,14 +248,12 @@ background-color: white;
 .apple{
     width: 100%;
     height: 460px;
-    background-color: royalblue;
 }
 .apple-box{
-    display: flex;
+     display: flex;
     margin: 0 auto;
     width: 1226px;
     height: 460px;
-    background-color: pink;
 }
 .apple-a{
     box-sizing: border-box;
@@ -278,10 +276,10 @@ background-color: white;
 .apple-a ul li:hover{
     background-color: rgb(255, 103,0);
 }
+/* -------------------------------------------------- */
 .apple-b{
-    width: 992px;
+    width: 1226px;
     height: 460px;
-    background-color: red;
 }
 
 .apple-b .apple-photo{
@@ -300,17 +298,18 @@ background-color: white;
     width: 100%;
     height: 100%;
 } 
- .apple-b .apple-photo .apple-c label{
+ /* .apple-b .apple-photo .apple-c label{
     position:absolute;
     top: 0;
     bottom: 0;
     margin: auto;
     height: 70px;
     line-height: 70px;
-} 
-.apple-b .apple-photo.apple-c:first-child{
+    z-index: 10;
+}  */
+/* .apple-b .apple-photo.apple-c:first-child{
     left: 0;
 }
 .apple-b .apple-photo.apple-c:nth-child(2){
     right:0;
-}
+} */

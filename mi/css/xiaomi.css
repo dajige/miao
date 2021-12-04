@@ -65,7 +65,7 @@ overflow: hidden;
     top: 40px;
     line-height: 100px;
     transition: all .3s;
-    z-index: 10;
+    z-index: 100;
 }
 .car:hover .header-c{
     height: 100px;
@@ -81,7 +81,7 @@ overflow: hidden;
     left: 50%;
     margin-left: -62px;
     transition: all .3s;
-    z-index: 10;
+    z-index: 100;
 }
 .header-d img{
     width: 90px;
@@ -129,6 +129,8 @@ line-height: 100px;
 display: block;
 padding-left: 127px;
 box-sizing: border-box;
+background-color: white;
+    z-index: 99;
 
 }
 .nav2{
@@ -165,6 +167,7 @@ box-sizing: border-box;
    height: 230px;
    /* background-color: pink; */
    box-shadow: 0 3px 4px rgb(0, 0, 0,.18);
+       background-color: white;
 }
 .nav1 li:hover>.nav-a{
     display: block;
@@ -173,6 +176,7 @@ box-sizing: border-box;
     display: flex;
     width: 1226px;
     margin: 20px auto;
+
 }
 .woca img{
 width: 204px;
@@ -203,6 +207,7 @@ width: 204px;
 /* ---------------------------------------------------------- */
 .nav2{
     position: relative;
+    z-index: 98;
 }
 .nav2>input{
 width: 223px;
@@ -239,6 +244,7 @@ background-color: white;
     border: 1px solid rgb(255, 103, 0);
     border-top: none;
     display: none;
+    background-color: white;
 }
 .nav2>input:focus~.nav2-a{
     display: block;
@@ -248,16 +254,15 @@ background-color: white;
 .apple{
     width: 100%;
     height: 460px;
-    background-color: royalblue;
 }
 .apple-box{
-    display: flex;
+    /* display: flex; */
     margin: 0 auto;
     width: 1226px;
     height: 460px;
-    background-color: pink;
 }
 .apple-a{
+    position:absolute;
     box-sizing: border-box;
     width: 234px;
     height: 460px;
@@ -268,28 +273,32 @@ background-color: white;
     list-style-type: none;
     margin: 0;
     padding:0;
-    padding-left: 30px;
+    /* padding-left: 30px; */
 }
 .apple-a ul li{
     height: 42px;
     line-height: 42px;
     color: white;
+    padding-left: 30px;
 }
-.apple-a ul li:hover{
+.apple-a>ul>li:hover{
     background-color: rgb(255, 103,0);
+    
 }
+/* -------------没搞明白的地方开始------------------------ */
 .apple-b{
-    width: 992px;
+    width: 100%;
     height: 460px;
-    background-color: red;
+    position: relative;
 }
 
-.apple-b .apple-photo{
+  .apple-b .apple-photo{
     height: 100%;
+    width: 1226px;
     position: relative;
 }
 .apple-b input{
-    display: none;
+     display: none; 
 }
 .apple-b .apple-photo .apple-c{
     width: 100%;
@@ -299,18 +308,225 @@ background-color: white;
 .apple-b .apple-photo .apple-c img{
     width: 100%;
     height: 100%;
+    /* display: none; */
 } 
- .apple-b .apple-photo .apple-c label{
+
+  .apple-b .apple-photo .apple-c label{
     position:absolute;
     top: 0;
     bottom: 0;
     margin: auto;
     height: 70px;
     line-height: 70px;
+    color: red;
 } 
-.apple-b .apple-photo.apple-c:first-child{
-    left: 0;
+.apple-cc{
+    left: 234px;
 }
-.apple-b .apple-photo.apple-c:nth-child(2){
-    right:0;
+.apple-ccc{
+    right: 0;
+}
+ 
+input:nth-child(1):checked ~ .apple-photo .apple-c:nth-child(1) img{
+    display: block;
+}
+input:nth-child(2):checked~.apple-photo .apple-c:nth-child(2) img {
+    display: block;
+}
+input:nth-child(3):checked~.apple-photo .apple-c:nth-child(3) img {
+    display: block;
+}
+input:nth-child(4):checked~.apple-photo .apple-c:nth-child(4) img{
+    display: block;
+}  
+/* ------------------没搞明白的地方结束------------------ */
+.apple-d{
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+}
+.apple-d label{
+    width: 6px;
+    height: 6px;
+    border: 2px solid #fff;
+    display: inline-block;
+    border-radius: 10px;
+}
+/* 第二部分左边的地方 */
+.what{
+    position:absolute;
+    left:234px;
+top:0px;
+display: none;
+    width: 992px;
+    height: 458px;
+    background-color: white;
+    border: 1px solid white;
+    box-shadow: 0 8px 16px rgb(0, 0, .18);
+    
+}
+.apple-a ul li:hover .what{
+    display: block;
+}
+.what ul{
+    float: left;
+    padding: 2px 0;
+    height: 458px;
+    margin: 0;
+    margin-right: 55px;
+    text-align: center;
+}
+.what ul li{
+    padding: 18px 20px;
+    margin: 0;
+    text-align: left;
+    /* float: left; */
+}
+.what ul li a{
+    font-size: 12px;
+  text-decoration: none;
+}
+.what ul li a:hover{
+    color: rgb(255, 103, 0);
+}
+.what ul li img{
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    vertical-align: middle;
+}
+/* ---------------第四部分开始------------------------------- */
+.banana{
+    width: 1226px;
+    height: 170px;
+    margin: 15px auto 25px;
+}
+.banana .banana-a{
+    /* display: flex; */
+    width: 234px;
+    height: 170px;
+    background-color: #5f5750;
+    display: inline-block;
+}
+.banana .banana-a div{
+    float: left;
+    width: 70px;
+    height: 82px;
+    padding: 0 3px;
+}
+.banana .banana-a a{
+    float: left;
+    display:inline-block;
+    text-decoration: none;
+    color: rgb(207, 204, 202);
+    /* flex-wrap: wrap; */
+    padding: 3px;
+    padding-top: 18px;
+    font-size: 12px;
+    width: 70px;
+    text-align: center;
+    height: 46px;
+    line-height: 46px;
+}
+.banana-a div:hover a{
+    color: white;
+}
+.banana-1{
+    float: right;
+}
+.banana-b,.banana-c,.banana-d{
+     float: left;
+    margin-left: 14px; 
+}
+.banana-b img{
+    width: 316px;
+    height: 170px;
+    display: block;
+}
+.banana-c img{
+    width: 316px;
+    height: 170px;
+    display: block;
+
+}
+
+.banana-d img{
+    width: 316px;
+    height: 170px;
+    display: block;
+}
+.banana-b a img:hover{
+    box-shadow: 0px 15px 15px #ebebeb;
+}
+.banana-c a img:hover{
+    box-shadow: 0px 15px 15px #ebebeb;
+}
+.banana-d a img:hover{
+    box-shadow: 0px 15px 15px #ebebeb;
+}
+/* -------------第四部分结束----------------- */
+.big-box{
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 4px 0 12px;
+    /* clear: both; */
+    overflow: auto;
+    
+}
+.small-box1{
+width: 1226px;
+margin: 0 auto;
+/* background-color: red; */
+/* clear: both; */
+}
+.small-box1 .font{
+    /* position: relative; */
+    display: flex;
+    justify-content:space-between;
+}
+.small-box1 .font a{
+    font-size: 16px;
+    line-height: 58px;
+    color: #424242;
+
+}
+.small-box1 .font a:hover{
+    color: rgb(255, 103, 0);
+    transition: .4s;
+}
+.small-box1 .font span{
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 58px;
+    color: #333;
+}
+/* -------------------轮播图------------------- */
+
+.orange{
+
+}
+.orange .orange-left{
+    float: left;
+    display: block;
+    height: 614px;
+    width: 234px;
+}
+ .orange .orange-left a:hover img{
+    box-shadow: 30px 30px 30px #ebebeb;
+}
+.orange .orange-right{
+       justify-content: space-between;
+    flex-wrap: wrap;
+    display: flex;
+    float: left;
+    width: 992px;
+    height: 614px;
+    background-color: chartreuse;
+} 
+.orange .orange-right div{
+    /* display: inline-block; */
+    width: 234px;
+    height: 260px;
+    background-color: red;
+    padding: 20px 0;
 }

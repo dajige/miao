@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .apple {
+            width: 100%;
+            height: 460px;
+        }
+
+        .apple-box {
+            /* display: flex; */
+            margin: 0 auto;
+            width: 1226px;
+            height: 460px;
+        }
+
+        .apple-a {
+            position: absolute;
+            box-sizing: border-box;
+            width: 234px;
+            height: 460px;
+            padding: 20px 0;
+            background-color: rgba(0, 0, 0, .3);
+        }
+
+        .apple-a ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            padding-left: 30px;
+        }
+
+        .apple-a ul li {
+            height: 42px;
+            line-height: 42px;
+            color: white;
+        }
+
+        .apple-a ul li:hover {
+            background-color: rgb(255, 103, 0);
+
+        }
+
+        /* -------------------------------------- */
+        .apple-b {
+            width: 100%;
+            height: 460px;
+            position: relative;
+        }
+
+        .apple-b .apple-photo {
+            height: 100%;
+            width: 1226px;
+            position: relative;
+        }
+
+        .apple-b input {
+            /* display: none; */
+        }
+
+        .apple-b .apple-photo .apple-c {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        .apple-b .apple-photo .apple-c img {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        .apple-b .apple-photo .apple-c label {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            height: 70px;
+            line-height: 70px;
+            color: red;
+        }
+
+        .apple-cc {
+            left: 234px;
+        }
+
+        .apple-ccc {
+            right: 0;
+        }
+
+        input:nth-child(1):checked~.apple-photo .apple-c:nth-child(1) img {
+            display: block;
+        }
+
+        input:nth-child(2):checked~.apple-photo .apple-c:nth-child(2) img {
+            display: block;
+        }
+
+        input:nth-child(3):checked~.apple-photo .apple-c:nth-child(3) img {
+            display: block;
+        }
+
+        input:nth-child(4):checked~.apple-photo .apple-c:nth-child(4) img {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="apple">
+        <div class="apple-box">
+            <div class="apple-b">
+                <input type="radio" name="apple-z" id="i1">
+                <input type="radio" name="apple-z" id="i2">
+                <input type="radio" name="apple-z" id="i3">
+                <input type="radio" name="apple-z" id="i4">
+                <div class="apple-photo">
+                    <div class="apple-c">
+                        <label class="apple-cc" for="i4">123</label>
+                        <label class="apple-ccc" for="i2">223</label>
+                        <img class="apple-a-1" src="./XIAOMI/啊啊1.jpg" alt="">
+                    </div>
+                    <div class="apple-c">
+                        <label class="apple-cc" for="i1">123</label>
+                        <label class="apple-ccc" for="i3">223</label>
+                        <img class="apple-a-2" src="./XIAOMI/啊啊2.webp" alt="">
+                    </div>
+                    <div class="apple-c">
+                        <label class="apple-cc" for="i2">123</label>
+                        <label class="apple-ccc" for="i4">223</label>
+                        <img class="apple-a-3" src="./XIAOMI/啊啊3.webp" alt="">
+                    </div>
+                    <div class="apple-c">
+                        <label class="apple-cc" for="i3">123</label>
+                        <label class="apple-ccc" for="i1">223</label>
+                        <img class="apple-a-4" src="./XIAOMI/啊啊4.webp" alt="">
+                    </div>
+                    <div class="apple-a">
+                        <ul>
+                            <li>手机</li>
+                            <li>电视</li>
+                            <li>笔记 本平板</li>
+                            <li>家电</li>
+                            <li>出行 穿戴</li>
+                            <li>智能 路由器</li>
+                            <li>电源 配件</li>
+                            <li>健康 儿童</li>
+                            <li>耳机 音响</li>
+                            <li>生活箱包</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="apple-d">
+                    <label for="i1"></label>
+                    <label for="i2"></label>
+                    <label for="i3"></label>
+                    <label for="i4"></label>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
