@@ -471,12 +471,14 @@ display: none;
     padding: 4px 0 12px;
     /* clear: both; */
     overflow: auto;
-    
+    text-align: center;
 }
 .small-box1{
 width: 1226px;
-margin: 0 auto;
-/* background-color: red; */
+
+display: inline-block;
+/* margin: 0 auto; */
+
 /* clear: both; */
 }
 .small-box1 .font{
@@ -502,9 +504,7 @@ margin: 0 auto;
 }
 /* -------------------轮播图------------------- */
 
-.orange{
 
-}
 .orange .orange-left{
     float: left;
     display: block;
@@ -512,7 +512,9 @@ margin: 0 auto;
     width: 234px;
 }
  .orange .orange-left a:hover img{
-    box-shadow: 30px 30px 30px #ebebeb;
+    box-shadow: 0px 50px 100px #ebebeb;
+    transform: translate(0,-5px);
+    transition: .3s;
 }
 .orange .orange-right{
        justify-content: space-between;
@@ -521,12 +523,146 @@ margin: 0 auto;
     float: left;
     width: 992px;
     height: 614px;
-    background-color: chartreuse;
 } 
-.orange .orange-right div{
+.orange .orange-right .wdnmd{
     /* display: inline-block; */
     width: 234px;
     height: 260px;
-    background-color: red;
+  background-color: white;
     padding: 20px 0;
+    margin-left: 14px;
+        text-align: center;
+
 }
+.orange .orange-right a img{
+    width: 160px;
+    height: 160px;
+}
+.orange .orange-right a{
+    display: block;
+    margin: 0 37px 18px 37px;
+    /* overflow: hidden; */
+}
+.orange .orange-right .orange-right-a h3{
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0 10px 2px;
+}
+.orange .orange-right .orange-right-a p{
+    color: #b0b0b0;
+    font-size: 12px;
+    margin: 0 10px 10px;
+    height: 18px;
+}
+.orange .orange-right .orange-right-a span{
+    margin: 0 10px 14px;
+    color: #ff6700;
+    text-align: center;
+}
+.orange-right-a:hover{
+    box-shadow: 0px 15px 30px #ebebeb;
+    transform: translate(0,-5px);
+    transition: .3s;
+}
+/* --------------------第六部分-------- */
+.small-box2{
+width: 1226px;
+margin: 0 auto;
+}
+.fuck{
+    margin: 0;
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 58px;
+    color: #333;
+    overflow:hidden;
+    /* display: inline-block; */
+}
+.fuck p{
+    float: left;
+    
+}
+.fuck-a ul{
+    margin: 0;
+    padding: 0;
+    padding: 16px 0 0 0;
+    list-style-type: none;
+    float: right;
+}
+.fuck-a ul li{
+    /* hover的时候换图的地方 */
+    float: left;
+  margin: 0 0 0 30px;
+  font-size: 16px;
+}
+.small-box2 .fuck-b{
+    /* float: left; */
+    width: 1226px;
+    background-color: turquoise;
+}
+.fuck-b .fuck-b-photo a img{
+    float: left;
+}
+.fuck-b .fuck-b-left{
+    float: right;
+    height: 614px;
+    padding: 0;
+    width: 992px;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+}
+.fuck-b-left div{
+    width: 234px;
+    height: 300px;
+    background-color: white;
+    text-align: center;
+} 
+.fuck-b-left div a img{
+    height: 160px;
+    width: 160px;
+    margin: 20px 0;
+}
+
+.fuck-b-left div h2{
+    width: 214px;
+    height: 21px;
+    margin: 0 10px 2px;
+    font-size: 14px;
+    color: #333;
+}
+.fuck-b-left div p{
+    width: 214px;
+    height: 18px;
+    font-size: 12px;
+    color: #b0b0b0;
+    margin: 0 10px 10px;
+   
+}
+.fuck-b-left div span {
+    color: rgb(255, 103, 0);
+    margin: 0 10px 14px;
+}
+.fuck-b-left .whatfuck .whatfuck-a p{
+    width: 94px;
+    height: 45px;
+font-size: 18px;
+margin: 50px 110px 0 30px;
+color: #333;
+/* line-height: 45px; */
+}
+.fuck-b-left .whatfuck{
+    /* opacity: 0; */
+    /* position: relative; */
+    width: 234px;
+    height: 93px;
+    position: absolute;
+    top: 314px;
+}
+
+
+
