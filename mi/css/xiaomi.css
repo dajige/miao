@@ -568,6 +568,7 @@ display: inline-block;
 .small-box2{
 width: 1226px;
 margin: 0 auto;
+overflow: hidden;
 }
 .fuck{
     margin: 0;
@@ -580,6 +581,7 @@ margin: 0 auto;
 }
 .fuck p{
     float: left;
+    /* overflow: hidden; */
     
 }
 .fuck-a ul{
@@ -598,17 +600,37 @@ margin: 0 auto;
 .small-box2 .fuck-b{
     /* float: left; */
     width: 1226px;
-    background-color: turquoise;
+    
+    margin-top: -25px;
+
+}
+.fuck-b{
+    overflow: hidden;
+}
+.fuck-b .fuck-b-photo {
+    display: inline-block;
+    /* overflow: hidden; */
 }
 .fuck-b .fuck-b-photo a img{
     float: left;
+}
+.fuck-b .fuck-b-photo a{
+    display: inline-block;
+}
+
+/* ------------------------奇怪的地方---------------- */
+
+.fuck-b .fuck-b-photo:hover{
+  box-shadow: 0px 15px 30px #ebebeb;
+    transform: translate(0,-5px);
+    transition: .3s;
 }
 .fuck-b .fuck-b-left{
     float: right;
     height: 614px;
     padding: 0;
     width: 992px;
-    background-color: red;
+    /* background-color: red; */
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -627,6 +649,7 @@ margin: 0 auto;
     width: 160px;
     margin: 20px 0;
 }
+
 
 .fuck-b-left div h2{
     width: 214px;
@@ -655,14 +678,40 @@ margin: 50px 110px 0 30px;
 color: #333;
 /* line-height: 45px; */
 }
+.fuck-b-left div a{
+    text-decoration: none;
+}
 .fuck-b-left .whatfuck{
     /* opacity: 0; */
     /* position: relative; */
     width: 234px;
-    height: 93px;
+    height: 143px;
     position: absolute;
     top: 314px;
+    line-height: 143px;
+    /* margin-top: 50px; */
+    /* display: block; */
+}
+.fuck-b-left .whatfuck p{
+        display: block;
+    font-size: 18px;
+    margin: 0 110px 0 30px;
+    color: #333;
+    text-align: left;
+    /* margin-top: 50px; */
+}
+.fuck-b-left .whatfuck span{
+    display: block;
+    font-size: 12px;
+    color: #757575;
+    margin: 0 110px 0 30px;
+        text-align: left;
+
 }
 
-
+.fuck-b-left div:hover{
+    box-shadow: 0px 15px 30px #ebebeb;
+    transform: translate(0,-5px);
+    transition: .3s;
+}
 
