@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            background-color: rgba(0, 0, 0, 0.08);
+            box-shadow: inset 0 0 1px red;
+        }
+
+        div.slider {
+            width: 300px;
+            margin: auto;
+        }
+
+        input:nth-child(1):checked~.slice div span:nth-child(1),
+        input:nth-child(2):checked~.slice div span:nth-child(2),
+        input:nth-child(3):checked~.slice div span:nth-child(3),
+        input:nth-child(4):checked~.slice div span:nth-child(4) {
+            left: 0;
+            z-index: 8;
+            animation: none;
+        }
+
+        .slice {
+            width: 300px;
+            height: 200px;
+        }
+
+        .slice>div {
+            width: 25%;
+            height: 100%;
+            float: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slice>div:nth-child(1) span {
+            background-position: 0 0;
+        }
+
+        .slice>div:nth-child(2) span {
+            background-position: -75px 0;
+        }
+
+        .slice>div:nth-child(3) span {
+            background-position: -150px 0;
+        }
+
+        .slice>div:nth-child(4) span {
+            background-position: -225px 0;
+        }
+
+        .slice>div span {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: block;
+            left: -100%;
+            transition: .5s;
+            animation: leave .5s;
+            background-size: 300px 200px;
+        }
+
+        .slice>div span:nth-child(1) {
+            background-image: url(./img/1.jpg);
+        }
+
+        .slice>div span:nth-child(2) {
+            background-image: url(./img/2.jpg);
+        }
+
+        .slice>div span:nth-child(3) {
+            background-image: url(./img/3.jpg);
+        }
+
+        .slice>div span:nth-child(4) {
+            background-image: url(./img/4.jpg);
+        }
+
+        @keyframes leave {
+            from {
+                left: 0;
+            }
+
+            to {
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <input type="radio" name="s1">
+        <input type="radio" name="s1">
+        <input type="radio" name="s1">
+        <input type="radio" name="s1">
+        <div class="slice">
+            <div>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
