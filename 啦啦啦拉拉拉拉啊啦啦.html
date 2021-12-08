@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .o {
+            width: 700px;
+            height: 100px;
+            background-color: aquamarine;
+            margin: auto;
+            margin-top: 250px;
+
+        }
+
+        .o:hover {
+            transform: rotateZ(36000deg);
+            transition: 150s;
+        }
+
+        .o:hover img:nth-child(1) {
+            transform: rotateZ(36000deg);
+            transition: 100s;
+        }
+
+        .o img:nth-child(1) {
+            height: 100px;
+            width: 100px;
+        }
+
+        .o:hover img:nth-child(2) {
+            transform: rotateZ(-36000deg);
+            transition: 150s;
+        }
+
+
+        .o img:nth-child(2) {
+            height: 100px;
+            width: 100px;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="o">
+        <img src="./img/i0.hdslb.jpg" alt="">
+        <img src="./img/R-C.png" alt="">
+    </div>
+</body>
+
+</html>
