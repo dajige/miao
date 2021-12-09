@@ -761,23 +761,24 @@ transition: 0.5s;
     
    /* float: right; */
 }
-.ok-switch span{
+.ok-switch .ok-wtf span{
     position: relative;
 }
-.ok-switch span{
+.ok-switch .ok-wtf span{
     margin-left: 10px;
 }
-.ok-switch>span div{
+.ok-switch .ok-wtf>span div{
     height: 614px;
     width: 992px;
     position: absolute;
+    top: 28px;
 display: flex;
 flex-direction: column;
 flex-wrap: wrap;
 justify-content:space-between;
 align-items: flex-end;
 }
-.ok-switch>span div a{
+.ok-switch .ok-wtf>span div a{
     width: 234px;
     height: 300px;
     display: inline-block;
@@ -785,12 +786,12 @@ align-items: flex-end;
     background-color: white;
     text-decoration: none;
 }
-.ok-switch>span div a img{
+.ok-switch .ok-wtf>span div a img{
     width: 160px;
     height: 160px;
     
 }
-.ok-switch>span div a h2{
+.ok-switch .ok-wtf>span div a h2{
     display: inline-block;
     width: 214px;
     height: 21px;
@@ -798,7 +799,7 @@ align-items: flex-end;
     font-size: 14px;
     color: #333;
 }
-.ok-switch>span div p{
+.ok-switch .ok-wtf>span div p{
     width: 214px;
     height: 18px;
     font-size: 12px;
@@ -806,10 +807,46 @@ align-items: flex-end;
     margin: 0 10px 10px 10px;
     display: inline-block;
 }
-.ok-switch>span div span{
+.ok-switch .ok-wtf>span div span{
     width: 214px;
     height: 21px;
     margin: 0px 10px 14px;
     color: rgb(255, 103, 0);
     display: inline-block;
+  
 }
+
+/* -------------------------------------------------- */
+.ok-wtf:hover span div{
+    visibility: hidden;
+    transition: none;
+}
+.ok-wtf span:first-child div {
+    visibility: visible;
+} 
+.ok-wtf span:hover div{
+    visibility: visible;
+    transition: none;;
+}
+ .ok-wtf span div{
+    visibility: hidden;
+    transition: 0s 99999s;
+} 
+   /* .ok-switch .ok-wtf span:nth-child(1) div{
+ transition: 0s 999999s;
+ visibility: hidden;
+}   
+  .ok-switch .ok-wtf span:nth-child(2) div{
+    visibility: hidden;
+   transition: 0s 99999s;
+}  
+ .ok-switch .ok-wtf span:nth-child(1):hover div{
+    visibility: visible;
+    transition: none;
+}   
+  .ok-switch .ok-wtf span:nth-child(2):hover div{
+    visibility: visible;
+    transition: none;
+}    */
+
+
