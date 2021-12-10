@@ -725,10 +725,7 @@ color: #333;
 
     width: 234px;
     text-align: left;
-
     float: left;
-    
-
 } 
 .ok-1 p{
     font-size: 22px;
@@ -767,7 +764,7 @@ transition: 0.5s;
 .ok-switch .ok-wtf span{
     margin-left: 10px;
 }
-.ok-switch .ok-wtf>span div{
+.ok-switch .ok-wtf>span>div{
     height: 614px;
     width: 992px;
     position: absolute;
@@ -778,7 +775,7 @@ flex-wrap: wrap;
 justify-content:space-between;
 align-items: flex-end;
 }
-.ok-switch .ok-wtf>span div a{
+.ok-switch .ok-wtf>span>div a{
     width: 234px;
     height: 300px;
     display: inline-block;
@@ -786,12 +783,12 @@ align-items: flex-end;
     background-color: white;
     text-decoration: none;
 }
-.ok-switch .ok-wtf>span div a img{
+.ok-switch .ok-wtf>span>div a img{
     width: 160px;
     height: 160px;
     
 }
-.ok-switch .ok-wtf>span div a h2{
+.ok-switch .ok-wtf>span>div a h2{
     display: inline-block;
     width: 214px;
     height: 21px;
@@ -799,7 +796,7 @@ align-items: flex-end;
     font-size: 14px;
     color: #333;
 }
-.ok-switch .ok-wtf>span div p{
+.ok-switch .ok-wtf>span>div p{
     width: 214px;
     height: 18px;
     font-size: 12px;
@@ -807,7 +804,7 @@ align-items: flex-end;
     margin: 0 10px 10px 10px;
     display: inline-block;
 }
-.ok-switch .ok-wtf>span div span{
+.ok-switch .ok-wtf>span>div a>span{
     width: 214px;
     height: 21px;
     margin: 0px 10px 14px;
@@ -816,6 +813,43 @@ align-items: flex-end;
   
 }
 
+ .ok-wtf-a .ok-wtf-a-1{
+    width: 234px;
+    height: 143px;
+    background-color: #9acd32;
+    
+}
+  .ok-wtf-a .ok-wtf-a-1{
+     width: 234px;
+    height: 143px;
+    background-color: violet;
+
+}  
+ .ok-wtf span div .ok-wtf-a .ok-wtf-a-1>div span:first-child{
+    display: inline-block;
+    width: 94px;
+    height: 42px;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 40px 110px 5px 10px;
+    text-align: left;
+   
+}
+/* .ok-wtf span div .ok-wtf-a .ok-wtf-a-1>div span:last-child{
+     display: inline-block;
+    margin: 0 110px 0 10px;
+    width: 94px;
+    height: 21px;
+font-size: 12px;
+text-align: left;
+color: rgb(255, 103,0); 
+}  */
+/* .ok-wtf-a>div:first-child div img{
+    width: 80px;
+    height: 80px;
+} */
+
+ 
 /* -------------------------------------------------- */
 .ok-wtf:hover span div{
     visibility: hidden;
@@ -832,6 +866,17 @@ align-items: flex-end;
     visibility: hidden;
     transition: 0s 99999s;
 } 
+.ok-wtf span div a:hover{
+    box-shadow: 0px 15px 30px #ebebeb;
+    transform: translate(0,-5px);
+    transition: .3s;
+}
+.ok-wtf span:hover{
+    color: rgb(255, 103,0);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
    /* .ok-switch .ok-wtf span:nth-child(1) div{
  transition: 0s 999999s;
  visibility: hidden;
@@ -849,4 +894,14 @@ align-items: flex-end;
     transition: none;
 }    */
 
+/* -------------------第八部分------------------------ */
 
+.small-box4{
+    display: inline-block;
+    min-width: 1226px;
+    margin: 0;
+    padding: 0;
+}
+.small-box4 .tatle-1{
+    float: left;
+}
