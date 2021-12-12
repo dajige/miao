@@ -2,6 +2,7 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: #f5f5f5;
 }
 .headerbox{
    width: 100%; 
@@ -26,7 +27,10 @@ body{
 .header-b{
     float: right;
 }
-
+.header-b .car:hover{
+    color: rgb(255, 103,0);
+    /* margin-right: 2px; */
+}
 .header ul li a {
     color: #b0b0b0;
     text-decoration: none;
@@ -108,6 +112,7 @@ overflow: hidden;
        width: 100%;
        height: 100px;
        position: relative;
+       background-color: white;
    }
 .warp{
     display: flex;
@@ -115,6 +120,7 @@ overflow: hidden;
     width: 1226px;
     height: 100%;
     margin: 0 auto;
+    background-color: white;
 }
 .loge{
     /* float: left; */
@@ -229,11 +235,19 @@ background-color: white;
 .nav2 button:hover{
    background-color:  rgb(255, 103, 0);
 }
-.nav2 input:hover{
+ .nav2 input:hover{
+    /* border-color: rgb(255, 103, 0); */
+    border-color: rgb(176, 176, 176);
+} 
+ .nav2 input:hover~button{
+    /* border-color:rgb(255, 103, 0) ; */
+    border-color: rgb(176, 176, 176);
+} 
+.nav2 input:focus{
     border-color: rgb(255, 103, 0);
 }
-.nav2 input:hover~button{
-    border-color:rgb(255, 103, 0) ;
+.nav2 input:focus ~ button{
+    border-color: rgb(255, 103, 0);
 }
 .nav2-a{
     position: absolute;
@@ -251,9 +265,14 @@ background-color: white;
 }
 /* 第二部分结束 */
 /* ----------------------------------------------------------------- */
+.background{
+    background-color: white;
+    /* 第三部分和第四部分的背景颜色 */
+}
 .apple{
     width: 100%;
     height: 460px;
+    background-color: white;
 }
 .apple-box{
     /* display: flex; */
@@ -396,10 +415,16 @@ display: none;
     vertical-align: middle;
 }
 /* ---------------第四部分开始------------------------------- */
+.baka{
+    background-color: white;
+    width: auto;
+    height: auto;
+}
 .banana{
     width: 1226px;
     height: 170px;
     margin: 15px auto 25px;
+    background-color: white;
 }
 .banana .banana-a{
     /* display: flex; */
@@ -407,14 +432,20 @@ display: none;
     height: 170px;
     background-color: #5f5750;
     display: inline-block;
+    /* display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around; */
 }
 .banana .banana-a div{
     float: left;
     width: 70px;
     height: 82px;
     padding: 0 3px;
+    margin-top: 10px;
 }
 .banana .banana-a a{
+    position: relative;
     float: left;
     display:inline-block;
     text-decoration: none;
@@ -427,6 +458,11 @@ display: none;
     text-align: center;
     height: 46px;
     line-height: 46px;
+}
+.banana-a div a i{
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
 }
 .banana-a div:hover a{
     color: white;
@@ -470,7 +506,7 @@ display: none;
     background-color: #f5f5f5;
     padding: 4px 0 12px;
     /* clear: both; */
-    overflow: auto;
+    /* overflow: hidden; */
     text-align: center;
 }
 .small-box1{
@@ -706,7 +742,13 @@ color: #333;
     color: #757575;
     margin: 0 110px 0 30px;
         text-align: left;
-
+}
+.whatfuck i{
+    font-size: 40px;
+    position: absolute;
+    top: 5px;
+    right: 40px;
+    color: rgb(255, 103, 0);
 }
 
 .fuck-b-left div:hover{
@@ -783,7 +825,7 @@ align-items: flex-end;
     background-color: white;
     text-decoration: none;
 }
-.ok-switch .ok-wtf>span>div a img{
+.ok-switch .ok-wtf>span>div a>img{
     width: 160px;
     height: 160px;
     
@@ -812,41 +854,81 @@ align-items: flex-end;
     display: inline-block;
   
 }
-.ok-wtf-a{
 
+.ok-switch .ok-wtf>span>div a:last-child{
+    background-color: #f5f5f5;
 }
- .ok-wtf-a .ok-wtf-a-1{
+  .ok-wtf-a .ok-wtf-a-1{
     width: 234px;
     height: 93px;
-    background-color: #9acd32;
-    text-align: left;
     padding-top: 50px;
+    position: relative;
+    background-color: white;
 }
   .ok-wtf-a .ok-wtf-a-2{
      width: 234px;
     height: 93px;
-    background-color: violet;
     margin-top: 14px;
     padding-top: 50px;
-
+background-color: white;
 }  
+.ok-wtf-a-1 div:first-child{
+    width: 117px;
+    height: 93px;
+}
+.ok-wtf-a-1 div:last-child{
+    margin-right: 40px;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 80px;
+    height: 80px;
+}
 .ok-wtf-a-1 div span:first-child{
-    display: inline-block;
+    margin-left: 30px;
+    text-align: left;
+    display: block;
     width: 94px;
     height: 21px;
     font-size: 14px;
     font-weight: 400;
-    margin: 10px 110px 5px 30px;
 }
 .ok-wtf-a-1 div span:last-child{
-margin: 0 110px 0 30px;
+    margin-left: 30px;
+    text-align: left;
+    display: block;
+    width: 80px;
+    height: 80px;
 font-size: 12px;
 color: rgb(255, 103, 0);
 }
-.ok-wtf-a-1 div span:last-child img{
+ .ok-wtf-a-1>div:last-child img{
 width: 80px;
 height: 80px;
+} 
+.ok-wtf-a-2 div:first-child{
+       width: 94px;
+    height: 45px;
+    display: block;
+    margin: 0 110px 0 30px;
+    text-align: left;
 }
+.ok-wtf-a-2 div:first-child span:first-child{
+    font-size: 18px;
+    color: #333;
+
+}
+.ok-wtf-a-2 div:first-child span:last-child{
+font-size: 12px;
+color: #757575;
+}
+.ok-wtf-a-2 div i{
+    font-size: 40px;
+    position: absolute;
+    bottom: 55px;
+    right: 30px;
+    color: rgb(255, 103, 0);
+} 
 /* .ok-wtf span div .ok-wtf-a .ok-wtf-a-1>div span:first-child{
     display: inline-block;
     width: 94px;
@@ -893,7 +975,23 @@ color: rgb(255, 103,0);
     transform: translate(0,-5px);
     transition: .3s;
 }
-.ok-wtf span:hover{
+.ok-wtf span div a:last-child{
+    transform: none;
+    transition: none;
+    box-shadow:none;
+}
+.ok-wtf-a .ok-wtf-a-1:hover{
+     box-shadow: 0px 15px 30px #ebebeb;
+    transform: translate(0,-5px);
+    transition: .3s;
+
+}
+.ok-wtf-a .ok-wtf-a-2:hover{
+  box-shadow: 0px 15px 30px #ebebeb;
+    transform: translate(0,-5px);
+    transition: .3s;
+}
+.ok-wtf>span:hover{
     color: rgb(255, 103,0);
     text-decoration: underline;
     cursor: pointer;
@@ -918,12 +1016,169 @@ color: rgb(255, 103,0);
 
 /* -------------------第八部分------------------------ */
 
-.small-box4{
+.switch-a{
     display: inline-block;
-    min-width: 1226px;
-    margin: 0;
-    padding: 0;
+    width: 1226px;
+    /* height: 58px; */
+    
 }
-.small-box4 .tatle-1{
+
+.switch-a h2{
     float: left;
+    margin: 0;
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 58px;
+    color: #333;
+    position: relative;
 }
+.switch-a h2>div{
+    display: inline-block;
+}
+.switch-photo-left{
+    position: absolute;
+    top: 58px;
+    left: 0;
+}
+.switch-a .switch-a-1{
+    float:right;
+
+    display: inline-block;
+    color: #424242;
+    line-height: 58px;
+}
+.switch-a .switch-a-1 .m>span{
+    margin: 0 0 0 30px;
+        font-size: 16px;
+        position: relative;
+}
+.switch-a .switch-a-1 .m span:hover{
+    color: #ff6700;
+    transition: .4s;
+    cursor: pointer;
+    border-bottom: 1px solid #ff6700;
+}
+.switch-photo-left>a:last-child img{
+    margin-top: -8px;
+}
+ .switch-photo-left>a img {
+    /* text-align: left; */
+    width: 234px;
+    height: 300px;
+    display: inline-block;
+} 
+ .switch-photo-left>a img:hover{
+    transition: .3s;
+    transform: translate(0,-5px);
+    box-shadow: 0px 15px 30px #ebebeb;
+} 
+ .switch-a-1 .m>span:nth-child(1)>div{
+     display: inline-block;
+    position: absolute;
+    right: -195px;
+    top: 40px;
+    width: 992px;
+    height: 614px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+ .switch-a-1 .m>span:nth-child(2)>div{
+     display: inline-block;
+    position: absolute;
+    right: -130px;
+    top: 40px;
+    width: 992px;
+    height: 614px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+ .switch-a-1 .m>span:nth-child(3)>div{
+     display: inline-block;
+    position: absolute;
+    right: -65px;
+    top: 40px;
+    width: 992px;
+    height: 614px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+ .switch-a-1 .m>span:nth-child(4)>div{
+     display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 40px;
+    width: 992px;
+    height: 614px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.switch-a-1 .m>span>div>a{
+    display: block;
+    height: 300px;
+    width: 234px;
+    padding: 20px 0;
+    box-sizing: border-box;
+    background-color: white;
+    text-decoration: none;
+} 
+ .switch-a-1 .m>span>div>a>img{
+    width: 160px;
+    height: 160px;
+}
+.switch-a-1 .m>span>div>a>h2{
+    width: 214px;
+    height: 21px;
+    font-size: 14px;
+    margin: 0 10px 2px;
+    color: #333;
+    font-weight: 400;
+    line-height: 21px;
+}
+.switch-a-1 .m>span>div>a>p{
+    font-size: 12px;
+    color: #b0b0b0;
+    height: 18px;
+    margin: 0 10px 10px;
+    line-height: 18px;
+
+}
+.switch-a-1 .m>span>div>a>span{
+    width: 214px;
+    height: 21px;
+    color: #ff6700;
+    margin: 0 10px 14px;
+    line-height: 21px;
+} 
+.switch-a-1 .m>span>div>a:hover{
+    transition: .3s;
+    transform: translate(0,-5px);
+    box-shadow:0px 15px 30px #ebebeb ;
+}
+ /* -------------------------------明天问老师------------- */
+  .m:hover span div{
+    visibility: hidden;
+    transition: none;
+}  
+  .m span:first-child div{
+    visibility: visible;
+} 
+  .m span:hover div{
+    visibility: visible;
+    transition: none;
+}  
+ .m span div{
+    visibility: hidden;
+    transition: 0s 9999s;
+} 
