@@ -1016,10 +1016,17 @@ color: rgb(255, 103,0);
 
 /* -------------------第八部分------------------------ */
 
+.small-box4{
+width: 1226px;
+height: 672px;
+/* text-align: center; */
+margin: auto;
+}
 .switch-a{
     display: inline-block;
     width: 1226px;
-    /* height: 58px; */
+    /* height: 58px; */ 
+    /* overflow: hidden; */
     
 }
 
@@ -1166,6 +1173,9 @@ color: rgb(255, 103,0);
     transform: translate(0,-5px);
     box-shadow:0px 15px 30px #ebebeb ;
 }
+.m{
+    height:0;
+}
  /* -------------------------------明天问老师------------- */
   .m:hover span div{
     visibility: hidden;
@@ -1182,3 +1192,192 @@ color: rgb(255, 103,0);
     visibility: hidden;
     transition: 0s 9999s;
 } 
+/* ------------------视频播放-------------------- */
+.video{
+    padding-bottom: 12px;
+    padding-top: 4px;
+}
+.video .video-table{
+    width: 1226px;
+    height: 58px;
+    /* background-color: yellow; */
+    /* display: inline-block; */
+margin: auto;
+}
+.video-table span{
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 58px;
+    color: #333;
+}
+.video-table>div{
+    position: relative;
+float: right;
+}
+.video-table div>p{
+width: 92px;
+height: 17px;
+margin: 0;
+    font-size: 16px;
+    line-height: 58px;
+    color: #424242;
+    transition: .4s;
+}
+.video-table div>i{
+    position: absolute;
+    right: 0;
+    top: 18px;
+    font-size:20px ;
+    transition: .4s;
+}
+.video-table div:hover>p{
+    color: #ff6700;
+    cursor: pointer;
+}
+.video-table div:hover>i{
+    color: #ff6700;
+    cursor: pointer;
+}
+.video-down{
+    width: 1240px;
+    height: 285px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.video-down>a{
+    width: 296px;
+    height: 285px;
+    background-color: white;
+}
+.video-down>a>img{
+    width: 296px;
+    height: 180px;
+}
+.video-down>a>p{
+    width: 268px;
+    height: 21px;
+    margin: 30px 14px 6px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    color: #333;
+    overflow: hidden;
+}
+.video-down>a:hover{
+    box-shadow: 0 15px 30px #ebebeb;
+    transition: .3s;
+    transform: translate(0,-5px);
+    
+}
+/* ----------------------人工售后-------- */
+.after-sale{
+    width: auto;
+    height: 332.5px;
+    background-color: white;
+}
+.after-sale .after-sale-a{
+    width: 1226px;
+    height: 25px;
+    padding: 27px 0;
+    background-color: pink;
+    margin: auto;
+    line-height: 25px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+.after-sale-a>ul{
+    padding: 0;
+ margin: 0;
+ height: 25px;
+    list-style-type: none;
+} 
+.after-sale-a>ul>li{
+float: left;
+   width: 19.8%;
+   height: 25px;
+   font-size: 16px;
+   line-height: 25px;
+   text-align: center;
+   background-color: yellow;
+   border-left: 1px;
+}
+.after-sale-a>ul>li>a{
+    font-size: 14px;
+    color: #616161;
+    text-decoration: none;
+}
+.after-sale-a>ul>li:nth-child(n+2){
+    border-left: 1px solid #e0e0e0;
+}
+.after-sale-b{
+    width: 1226px;
+    height: 172.5px;
+    background-color: tomato;
+    margin: auto;
+    padding: 40px 0;
+}
+.after-sale-b>dl{
+    float: left;
+    width: 160px;
+    height: 116.5px;
+    background-color: green;
+    margin: 0;
+}
+.after-sale-b>dl>dt{
+    margin:-1px 0 26px;
+    font-size: 14px;
+    line-height: 1.25;
+    color: #424242;
+
+}
+.after-sale-b>dl>dd{
+    font-size: 12px;
+    margin: 10px 0 0 0;
+        text-align: left;
+        width: 160px;
+        height: 18px;
+}
+.after-sale-b>dl:nth-child(4){
+   height: 172.5px;
+}
+.after-sale-b>dl:nth-child(5){
+    height: 144.5px;
+}
+.after-sale-b-last{
+    width: 252px;
+    height: 111px;
+    background-color: indigo;
+    float: right;
+    width: 251px;
+    border-left: 1px solid #e0e0e0;
+    text-align: center;
+    color: #616161;
+}
+.after-sale-b-last>p{
+    font-size: 22px;
+    line-height: 1;
+    color: #ff6700;
+    margin: 0 0 5px 0;
+}
+.after-sale-b-last>span{
+    margin: 0 0 5px 0;
+    font-size: 12px;
+}
+.after-sale-b-last>a{
+margin: auto; 
+   display: block;
+border-color: #ff6700;
+color: #ff6700;
+background-color: #fff;
+width: 120px;
+height: 30px;
+}
+.after-sale-b-last .after-sale-b-last-1{
+    width: 251px;
+    height: 21px;
+    margin-top: 10px;
+    font-size: 12px;
+    position: relative;
+}
