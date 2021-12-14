@@ -1,4 +1,6 @@
-
+a{
+    text-decoration: none;
+}
 body{
     margin: 0;
     padding: 0;
@@ -1281,7 +1283,6 @@ margin: 0;
     width: 1226px;
     height: 25px;
     padding: 27px 0;
-    background-color: pink;
     margin: auto;
     line-height: 25px;
     text-align: center;
@@ -1300,7 +1301,6 @@ float: left;
    font-size: 16px;
    line-height: 25px;
    text-align: center;
-   background-color: yellow;
    border-left: 1px;
 }
 .after-sale-a>ul>li>a{
@@ -1314,7 +1314,6 @@ float: left;
 .after-sale-b{
     width: 1226px;
     height: 172.5px;
-    background-color: tomato;
     margin: auto;
     padding: 40px 0;
 }
@@ -1322,7 +1321,6 @@ float: left;
     float: left;
     width: 160px;
     height: 116.5px;
-    background-color: green;
     margin: 0;
 }
 .after-sale-b>dl>dt{
@@ -1338,6 +1336,13 @@ float: left;
         text-align: left;
         width: 160px;
         height: 18px;
+       
+}
+.after-sale-b>dl>dd>a{
+     color: #757575;
+}
+.after-sale-b>dl>dd>a:hover{
+    color: #ff6700;
 }
 .after-sale-b>dl:nth-child(4){
    height: 172.5px;
@@ -1348,7 +1353,6 @@ float: left;
 .after-sale-b-last{
     width: 252px;
     height: 111px;
-    background-color: indigo;
     float: right;
     width: 251px;
     border-left: 1px solid #e0e0e0;
@@ -1366,6 +1370,7 @@ float: left;
     font-size: 12px;
 }
 .after-sale-b-last>a{
+    border: 1px solid #ff6700;
 margin: auto; 
    display: block;
 border-color: #ff6700;
@@ -1373,6 +1378,7 @@ color: #ff6700;
 background-color: #fff;
 width: 120px;
 height: 30px;
+line-height: 30px;
 }
 .after-sale-b-last .after-sale-b-last-1{
     width: 251px;

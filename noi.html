@@ -116,11 +116,11 @@
     var y2 = Number(prompt(""))
     var x3 = Number(prompt(""))
     var y3 = Number(prompt(""))
-    var p = (a + b + c) / 2
-    var z = Math.sqrt(p * (p - a) * (p - b) * (p - c))
     var a = Math.sqrt(((x1 - x2) ** 2) + ((y1 - y2) ** 2))
     var b = Math.sqrt(((x2 - x3) ** 2) + ((y2 - y3) ** 2))
     var c = Math.sqrt(((x3 - x1) ** 2) + ((y3 - y1) ** 2))
+    var p = (a + b + c) / 2
+    var z = Math.sqrt(p * (p - a) * (p - b) * (p - c))
     console.log(z.toFixed(2))
 </script>
 
@@ -142,3 +142,35 @@
     console.log(2 ** a)
 </script>
 <!-- ------------------------------------------------------ -->
+<script type="xxx" id="ch0104/01">
+    var n = Number(prompt(""))
+  if (n > 0) {
+      console.log("positive");
+  }
+    if (n == 0) {
+      console.log("zero");
+  }
+    if (n < 0) {
+      console.log("negative");
+  }
+</script>
+
+<script type="xxx" id="ch0104/02">
+    var a = Number(prompt(""))
+if (a > 0) {
+    console.log(a);
+}
+if (a < 0) {
+    console.log(-a);
+}
+</script>
+
+<!-- <script type="" id="ch0104/02">
+    var a = Number(prompt(""))
+if (a > 0) {
+    console.log(a);
+}
+if (a < 0) {
+    console.log(-a);
+}
+</script> -->
