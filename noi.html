@@ -93,10 +93,51 @@
     console.log(parseInt((m / (PI * r * r * h)) + 1))
 </script>
 
-<script id="ch0103/15">
-    var h = Number(prompt(""))
-    var r = Number(prompt(""))
-    var PI = 3.14159
-    var m = 1000 * 2 * 10
-    console.log(parseInt((m / (PI * r * r * h)) + 1))
+<script type="xxx" id="ch0103/15">
+    var n = Number(prompt(""))
+    var x = Number(prompt(""))
+    var y = Number(prompt(""))
+    console.log(n - parseInt(y / x) - 1);
+</script>
+
+<script type="xxx" id="ch0103/16">
+    var x1 = Number(prompt(""))
+    var y1 = Number(prompt(""))
+    var x2 = Number(prompt(""))
+    var y2 = Number(prompt(""))
+    var a = (((x1 - x2) ** 2) + ((y1 - y2) ** 2))
+    console.log(Math.sqrt(a).toFixed(3))
+</script>
+
+<script id="ch0103/17">
+    var x1 = Number(prompt(""))
+    var y1 = Number(prompt(""))
+    var x2 = Number(prompt(""))
+    var y2 = Number(prompt(""))
+    var x3 = Number(prompt(""))
+    var y3 = Number(prompt(""))
+    var p = (a + b + c) / 2
+    var z = Math.sqrt(p * (p - a) * (p - b) * (p - c))
+    var a = Math.sqrt(((x1 - x2) ** 2) + ((y1 - y2) ** 2))
+    var b = Math.sqrt(((x2 - x3) ** 2) + ((y2 - y3) ** 2))
+    var c = Math.sqrt(((x3 - x1) ** 2) + ((y3 - y1) ** 2))
+    console.log(z.toFixed(2))
+</script>
+
+<script type="xxx" id="ch0103/18">
+    var a1 = Number(prompt(""))
+    var a2 = Number(prompt(""))
+    var n = Number(prompt(""))
+    console.log(a1 + (n - 1) * (a2 - a1))
+</script>
+
+<script type="xxx" id="ch0103/19">
+    var a = Number(prompt(""))
+    var b = Number(prompt(""))
+    console.log(a * b)
+</script>
+
+<script type="xxx" id="ch0103/20">
+    var a = Number(prompt(""))
+    console.log(2 ** a)
 </script>
