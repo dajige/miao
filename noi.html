@@ -25,9 +25,78 @@
     console.log(a % b)
 </script>
 
-<script id="ch0103/05">
+<script type="xxx" id="ch0103/05">
     var a = parseInt(prompt(""))
     var b = parseInt(prompt(""))
-    console.log(parseInt(a / b))
-    console.log(a % b)
+    console.log(a / b.toFixed(9))
+</script>
+
+<script type="xxx" id="ch0103/06">
+    var a = parseInt(prompt(""))
+    var b = parseInt(prompt(""))
+    console.log((b / a * 100).toFixed(3) + "%")
+</script>
+
+<script type="xxx" id="ch0103/07">
+    var x = Number(prompt(""))
+    var a = Number(prompt(""))
+    var b = Number(prompt(""))
+    var c = Number(prompt(""))
+    var d = Number(prompt(""))
+    console.log(((a * x ** 3) + (b * x ** 2) + (c * x) + d).toFixed(7))
+</script>
+
+<script type="xxx" id="ch0103/08">
+    var F = Number(prompt(""))
+    console.log((5 * (F - 32) / 9).toFixed(5))
+</script>
+
+<script type="xxx" id="ch0103/09">
+    var a = Number(prompt(""))
+    var b = 3.14159
+    console.log((a * 2).toFixed(4))
+    console.log((b * a * 2).toFixed(4))
+    console.log((b * a ** 2).toFixed(4))
+</script>
+
+<script type="xxx" id="ch0103/10">
+    var r1 = Number(prompt(""))
+    var r2 = Number(prompt(""))
+    console.log((1 / (1 / r1 + 1 / r2)).toFixed(2))
+</script>
+
+<script type="xxx" id="ch0103/11">
+    var a = Number(prompt(""))
+    var b = Number(prompt(""))
+    console.log((a % b).toFixed(4))
+</script>
+
+<script type="xxx" id="ch0103/12">
+    var r = Number(prompt(""))
+    var PI = 3.14
+    console.log((4 / 3 * PI * r ** 3).toFixed(2))
+</script>
+
+<script type="xxx" id="ch0103/13">
+    var a = Number(prompt(""))
+    var ge = parseInt(a % 10)
+    var shi = parseInt((a % 100) / 10)
+    var bai = parseInt(a / 100)
+    console.log(ge + "" + shi + "" + bai + "");
+</script>
+
+<script type="xxx" id="ch0103/14">
+    var h = Number(prompt(""))
+    var r = Number(prompt(""))
+    var PI = 3.14159
+    var m = 1000 * 2 * 10
+    console.log(parseInt((m / (PI * r * r * h)) + 1))
+</script>
+
+<script id="ch0103/15">
+    var h = Number(prompt(""))
+    var r = Number(prompt(""))
+    var PI = 3.14159
+    var m = 1000 * 2 * 10
+    console.log(parseInt((m / (PI * r * r * h)) + 1))
 </script>
