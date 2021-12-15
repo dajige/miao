@@ -109,7 +109,7 @@
     console.log(Math.sqrt(a).toFixed(3))
 </script>
 
-<script id="ch0103/17">
+<script type="xxx" id="ch0103/17">
     var x1 = Number(prompt(""))
     var y1 = Number(prompt(""))
     var x2 = Number(prompt(""))
@@ -146,31 +146,225 @@
     var n = Number(prompt(""))
   if (n > 0) {
       console.log("positive");
-  }
-    if (n == 0) {
-      console.log("zero");
-  }
-    if (n < 0) {
-      console.log("negative");
-  }
+  }else if (n == 0) {
+          console.log('zero');
+      }else{
+          console.log('negative');
+      }
+     
+  
 </script>
 
 <script type="xxx" id="ch0104/02">
     var a = Number(prompt(""))
 if (a > 0) {
     console.log(a);
-}
-if (a < 0) {
-    console.log(-a);
-}
+}else
+console.log(-a);
 </script>
 
-<!-- <script type="" id="ch0104/02">
+<script type="xxx" id="ch0104/03">
     var a = Number(prompt(""))
-if (a > 0) {
+if (a % 2 == 0) {
+    console.log('even');
+}else
+console.log('odd');
+</script>
+
+<script type="xxx" id="ch0104/04">
+    var a =(prompt(''))
+if (a.charCodeAt(0) % 2 == 0) {
+    console.log('no');
+}else
+console.log('yes')
+</script>
+
+<script type="xxx" id="ch0104/05">
+    var x = Number(prompt(""))
+    var y = Number(prompt(""))
+if (x > y) {
+    console.log('>');
+}else if (x == y) {
+    console.log('=');
+ }else
+console.log('<');
+</script>
+
+<script type="xxx" id="ch0104/06">
+    var a = Number(prompt(""))
+if (9 < a && a < 100) {
+    console.log('1');
+}else
+console.log('0');
+</script>
+
+<script type="xxx" id="ch0104/07">
+    var a = Number(prompt(""))
+    var b = Number(prompt(""))
+
+if (10 < a || b > 20) {
+    console.log('1');
+}else
+console.log('0');
+</script>
+
+<script type="xxx" id="ch0104/08">
+    var n = Number(prompt(""))
+
+if (n % 3 == 0 && n % 5 == 0) {
+    console.log('YES');
+}else
+console.log('NO');
+</script>
+
+<script type="xxx" id="ch0104/09">
+    var n = Number(prompt(""))
+if (n % 3 == 0 && n % 5 == 0 && n % 7 == 0) {
+    console.log('3' + '5' + '7');
+}else if (n % 3 == 0 && n % 5 == 0) {
+    console.log('3' + '5');
+}else if (n % 3 == 0 && n % 7 == 0) {
+    console.log('3' + '7');
+}else if (n % 5 == 0 && n % 5 == 0) {
+    console.log('5'+ '7');
+}else if (n % 3) {
+    console.log('3');
+}else if (n % 5) {
+    console.log('5');
+}else if (n % 7) {
+    console.log('7');
+}else console.log('n');
+</script>
+
+<script type="xxx" id="ch0104/10">
+    var a = Number(prompt(""))
+    var b = Number(prompt(""))
+if (a < 60 || b < 60) {
+    console.log('1');
+}else
+console.log('0');
+</script>
+
+<script type="xxx" id="ch0104/11">
+    var a = Number(prompt(""))
+if (a == 1 || a == 3 || a == 5) {
+    console.log('NO');
+}else
+console.log('YES');
+</script>
+
+<script type="xxx" id="ch0104/12">
+    var a = Number(prompt(""))
+var b = 27 + 23
+var walk = a / 1.2
+var bike = a / 3 + b
+if (walk < bike ) {
+    console.log('Walk');
+}else if (walk > bike) 
+    console.log('Bike');
+else
+console.log('All');
+</script>
+<script type="xxx" id="ch0104/13">
+    var x = Number(prompt(""))
+    var y1 = -x + 2.5
+    var y2 = 2-1.5 * ( x - 3) * ( x - 3)
+    var y3 = x/2-1.5
+    if (x > 0 || x == 0 || x < 5) {
+        console.log(y1.toFixed(3));
+    }else if (x > 5 || x == 5 || x < 10) 
+            console.log(y2.toFixed(3));
+    else
+    console.log(y3.toFiexd(3));
+</script>
+
+<script type="xxx" id="ch0104/14">
+    var a = Number(prompt(""))
+    var b = prompt("")
+    if (b == 'y') {
+        if (a > 1000) {
+            console.log(8 + (Math.ceil((a - 1000)/500) * 4) + 5);
+        }else if (a < 1000) {
+            console.log(8 + 5);
+        } 
+    }
+    if (b == 'n') {
+        if (a < 1000) {
+            console.log(8);
+        }else if (a > 1000) {
+            console.log(8 + (Math.ceil((a - 1000)/500) * 4))
+        }
+    }
+</script>
+
+<script type="xxx" id="ch0104/15">
+    var a = Number(prompt(""))
+var b = Number(prompt(""))
+var c = Number(prompt(""))
+if (a > b) {
     console.log(a);
-}
-if (a < 0) {
-    console.log(-a);
-}
+}else if (a < c) {
+    console.log(c);
+}else
+console.log(b);
+</script>
+
+<script type="xxx" id="ch0104/16">
+  var a = Number(prompt(""))
+  var b = Number(prompt(""))
+  var c = Number(prompt(""))
+if ((a + b) > c && (a - b) < c && (a + c) > b && (a - c) < b && (b + c) > a && (b - c) < a) {
+    console.log('YES');
+}else
+console.log('NO');
+</script>
+
+<script type="xxx" id="ch0104/17">
+    var a = Number(prompt(""))
+if (a % 4 == 0) {
+    console.log('y');
+}else 
+console.log('n');
+</script>
+
+<!-- <script type="" id="ch0104/18">
+    var x = Number(prompt(""))
+    var y = Number(prompt(""))
+
+
 </script> -->
+
+<script type="xxx" id="ch0104/19">
+    var a = Number(prompt(""))
+    var b = Number(prompt(""))
+    var c = (prompt(""))
+if (c == '+') {
+    console.log(a + b);
+}else if (c == '-') {
+    console.log(a - b);
+ }else if (c == '*') {
+    console.log(a * b);
+  }else if (c == '/') {
+    if (b == 0) {
+        console.log('Divided by zero!');
+    }else
+    console.log(a / b);
+   }
+   if (c != '+' && c != '-' && c != '*' && c != '/') {
+       console.log('Invalid operator!');
+   }
+</script>
+
+<script type="" id="ch0104/20">
+    var a = Number(prompt(""))
+    var b = Number(prompt(""))
+    var c = Number(prompt(""))
+
+</script>
+
+<script type="xxx" id="ch0104/21">
+    var n = Number(prompt(""))
+    var x = Number(prompt(""))
+    var y = Number(prompt(""))
+console.log(n - parseInt(y / x) - 1);
+</script>
