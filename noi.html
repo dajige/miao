@@ -174,9 +174,9 @@ console.log('odd');
 <script type="xxx" id="ch0104/04">
     var a =(prompt(''))
 if (a.charCodeAt(0) % 2 == 0) {
-    console.log('no');
+    console.log('NO');
 }else
-console.log('yes')
+console.log('YES')
 </script>
 
 <script type="xxx" id="ch0104/05">
@@ -217,7 +217,7 @@ if (n % 3 == 0 && n % 5 == 0) {
 console.log('NO');
 </script>
 
-<script type="xxx" id="ch0104/09">
+<!-- <script type="xxx" id="ch0104/09">
     var n = Number(prompt(""))
 if (n % 3 == 0 && n % 5 == 0 && n % 7 == 0) {
     console.log('3' + '5' + '7');
@@ -234,9 +234,9 @@ if (n % 3 == 0 && n % 5 == 0 && n % 7 == 0) {
 }else if (n % 7) {
     console.log('7');
 }else console.log('n');
-</script>
+</script> -->
 
-<!-- <script type="" id="ch0104/09">
+<script type="xxx" id="ch0104/09">
     var n = Number(prompt(""))
 if (n % 3 == 0 || n % 5 == 0 || n % 7 == 0) {
     if (n % 3 == 0) {
@@ -250,7 +250,7 @@ if (n % 3 == 0 || n % 5 == 0 || n % 7 == 0) {
     }
 }else{
     console.log('n');
-} -->
+}
 
 
 <script type="xxx" id="ch0104/10">
@@ -341,9 +341,9 @@ console.log('no');
 <script type="xxx" id="ch0104/17">
     var a = Number(prompt(""))
 if (a % 4 == 0) {
-    console.log('y');
+    console.log('Y');
 }else 
-console.log('n');
+console.log('N');
 </script>
 
 <!-- <script type="" id="ch0104/18">
@@ -531,7 +531,7 @@ for(i = 0; i < n; i++){
 console.log(sum);
 </script>
 
-<script type="" id="ch0105/013">
+<script type="xxx" id="ch0105/013">
     var n = Number(prompt(''))
     var m = Number(prompt(''))
     var sum = 1
@@ -539,4 +539,41 @@ for(i = 0;i < m; i++){
     sum *= n
 }
 console.log(sum);
+</script>
+
+<script type="xxx" id="ch0105/014">
+    var x = Number(prompt(''))
+    var n = Number(prompt(''))
+for(i = 0;i < n; i++){
+    x = x + x * (1 / 1000)
+}
+console.log(x.toFixed(4));
+</script>
+
+
+<script type="xxx" id="ch0105/015">
+    var r = Number(prompt(''))
+    var m = Number(prompt(''))
+    var y = Number(prompt(''))
+    var sun = m
+for(i = 0;i < y; i++){
+    m += m * r / 100
+}
+console.log(parseInt(m));
+</script>
+
+<script type="" id="ch0105/016">
+    debugger
+    var n = Number(prompt(''))
+    var k = Number(prompt(''))
+    var x = 0
+    var sun = 200
+for(i = x;i < sun / n; i++){
+   sun += sun / 10
+   k += k
+   x += 1
+   if (k >= sun) {
+       console.log(x);
+   }
+}
 </script>
