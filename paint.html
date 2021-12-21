@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>画图</title>
+    <style>
+      canvas {
+        border: 2px solid #f0f;
+        display: block;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="500" height="400"></canvas>
+  </body>
+  <script>
+    var canvas = document.querySelector('canvas')
+    canvas.style.imageRendering = 'pixelated' //放大时的插帧方式：不插帧，直接放大像素
+    var ctx = canvas.getContext('2d')
+
+    function dot(x, y, color = 'black') {
+      x = Math.round(x)
+      y = Math.round(y)
+      ctx.fillStyle = color
+      ctx.fillRect(x, y, 1, 1)
+    }
+    /**
+   * YOUR TASK
+      * 在 坐标 (42, 42) 画出一个点
+      * 画一条实线
+      * 画一条一个实点一个空点的虚线
+      * 画一条两个实点两个空点的虚线
+      * 画一条三个实点两个空点的虚线
+      * 画一条45度的斜线
+      * 画一条30度的斜线（与x轴或y轴的夹角呈30度）
+      * 画一条跨越画布左上角和右下角的对角线
+      * 画一个空心矩形
+      * 画一个实心矩形
+      * 画两个个空心的圆，居中：
+        * 一个半径为50像素
+        * 一个半径为200像素
+      * 画一个实心的圆，半径至少为100像素
+      * 画一个【大小合适】的sin(x)的图像
+
+      * 画出rgb色彩空间的某一面（尺寸要大于100x100）
+        如果做出上一题后，尝试将其每个点的坐标乘以一个矩阵（如(2,0,0,2)或(1,0.27得到新的位置，即绘制出被线性变幻后的色彩空间某一面
+        可以考虑如下几种矩阵：
+           2 0
+           0 2
+           ------
+           1  0.27
+           0  1
+           ------
+           0.5    0.87
+           -0.87  0.5
+
+   */
+  </script>
+  <script>
+    // 不可更改上面的代码
+    // 你的代码写在这里
+    // YOUR CODE GOES BELOW
+
+    dot(42, 42, 'red') //一个点
+
+    for (y = 1; y < 100; y++) {
+      //一条实线
+      dot(50, y)
+    }
+
+    for (x = 1; x < 150; x++) {
+      //一个实点 一个虚点
+      if (x % 2 == 0) {
+        dot(x, 100)
+      }
+    }
+
+    for (y = 1; y < 180; y++) {
+      //两个实线两个虚点
+      if (y % 4 == 0) {
+        dot(110, y)
+      } else if ((y % 4) - 1 == 0) {
+        dot(110, y)
+      }
+    }
+
+    for (y = 1; y < 200; y++) {
+      //三个实线两个虚点
+      dot(120, y)
+      if (y % 5 == 0) {
+        dot(120, y, 'white')
+      } else if ((y % 5) - 1 == 0) {
+        dot(120, y, 'white')
+      }
+    }
+
+    for (let x = 0; x < 400; x++) {
+      //歇着45°
+      dot(x, x - 1, 'red')
+    }
+
+    for (let x = 0; x < 400; x++) {
+      //歇着30
+      dot(x, 2 * x, 'red')
+    }
+
+    //  for (let x = 0; x < 400; x++) {//对角线
+    //   dot(x, 2 * x, 'red')
+    // }
+    //
+    //
+    //空心矩形
+    for (x = 50; x < 300; x++) {
+      dot(x, 50, 'red')
+    }
+    for (x = 50; x < 300; x++) {
+      dot(x, 250, 'red')
+    }
+    for (y = 50; y < 250; y++) {
+      dot(50, y, 'red')
+    }
+    for (y = 50; y < 250; y++) {
+      dot(300, y, 'red')
+    }
+    //实心矩形
+    for (x = 170; x < 300; x++) {
+      for (y = 200; y < 300; y++) {
+        dot(x, y - 50)
+      }
+    }
+
+    //半径为50像素
+    for (x = 200; x < 250; x++) {
+      dot(x, y, 'green')
+    }
+  </script>
+</html>

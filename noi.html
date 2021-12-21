@@ -754,8 +754,9 @@ for(i = 0;i < x;i++){
     d = k % 10
     n = n * 10 + d
     k = (k - d) / 10
+    aaa = false
   }
-  if ((aaa = true)) {
+  if (aaa == true) {
     console.log('-' + n)
   } else console.log(n)
 </script>
@@ -868,6 +869,7 @@ for(i = 0;i < x;i++){
 </script> -->
 
 <script type="xxx" id="ch0105/39">
+  debugger
   var n = Number(prompt(''))
   var sum = 0
   for (i = 1; i <= n; i++) {
@@ -946,11 +948,13 @@ for(i = 0;i < x;i++){
 <script type="xxx" id="ch0105/43">
   var h = Number(prompt(''))
   for (var i = 2; ; i++) {
-    if (n % i == 0) {
+    if (n % i === 0) {
       console.log(n / i)
       break
     }
   }
+
+  --------------------------------------------
 </script>
 
 <!-- <script type="" id="ch0105/44">
@@ -958,7 +962,7 @@ for(i = 0;i < x;i++){
   var count = 0
 </script> -->
 
-<script type="" id="ch0105/45">
+<script type="xxx" id="ch0105/45">
   var n = Number(prompt(''))
   var sum = 0
   var day = 1
@@ -974,4 +978,53 @@ for(i = 0;i < x;i++){
     }
   }
   console.log(sum)
+</script>
+
+<script type="xxx" id="narcissistic">
+  let n = Number(prompt(''))
+  function narcissistic(n) {
+    let sum = 0
+    let m = n
+    while (n > 0) {
+      let g = n % 10
+      sum = sum + g ** 3
+      n = (n - g) / 10
+    }
+    if (sum == m) {
+      return 'YES'
+    } else {
+      return 'NO'
+    }
+  }
+  console.log(narcissistic(n))
+</script>
+
+<script type="xxx" id="narcissistics">
+  function narcissistics(n) {
+    for (i = 100; i <= 10000; i++) {
+      let a = i % 10
+      let b = ((i - a) / 10) % 10
+      let c = parseInt((i % 1000) / 100)
+      let d = parseInt(i / 1000)
+      if (a ** 3 + b ** 3 + c ** 3 + d ** 3 === i) {
+        console.log(i)
+      }
+    }
+  }
+  narcissistics()
+</script>
+
+<script type="" id="palindrom">
+  function narcissistics(n) {
+    for (i = 100; i <= 10000; i++) {
+      let a = i % 10
+      let b = ((i - a) / 10) % 10
+      let c = parseInt((i % 1000) / 100)
+      let d = parseInt(i / 1000)
+      if (a ** 3 + b ** 3 + c ** 3 + d ** 3 === i) {
+        console.log(i)
+      }
+    }
+  }
+  narcissistics()
 </script>
