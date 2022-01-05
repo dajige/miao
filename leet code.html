@@ -1,0 +1,678 @@
+<script type="xx">
+  debugger
+  var addDigits = function (num) {
+    for (i = 1; i <= num; i++) {
+      number1 = num % 10
+      number2 = (num - number1) / 10
+      num = number1 + number2
+      if (num < 10) {
+        return num
+      }
+    }
+  }
+  addDigits(38)
+</script>
+
+<script type="xxx">
+  /**
+   * @param {number[]} nums
+   * @return {void} Do not return anything, modify nums in-place instead.
+   */
+  debugger
+  var moveZeroes = function (nums) {
+    let n = nums.length
+    let k = 0
+    for (let i = 0; i < n; i++) {
+      if (nums[i] == 0) {
+        nums.splice(i, 1)
+        k++
+        i--
+      }
+    }
+    for (let j = 0; j < k; j++) {
+      nums.push(0)
+    }
+    return nums
+  }
+  moveZeroes([1, 0, 2, 0, 5, 0, 3])
+</script>
+
+<script type="xxx">
+  /**
+   * @param {number[]} nums
+   * @return {number}
+   */
+  var findMaxConsecutiveOnes = function(nums) {
+  let max = 0
+  let number = 0
+  let n = nums.length
+  for(i = 0; i < n; i++ )(
+     if(nums[i] == 1){
+        number++
+        max = Math.max(number,max)
+     }else solw = 0
+  )
+  return max;
+  };
+</script>
+
+<script type="xxx">
+  /**
+   * @param {number} x
+   * @return {number}
+   */
+  debugger
+  var reverse = function (x) {
+    let sum = 0
+    let a = 0
+    let max = Math.pow(2, 31) - 1
+    let min = Math.pow(-2, 31)
+    if (x > max || x < min) {
+      return 0
+    }
+    while (x != 0) {
+      a = x % 10
+      x = (x - a) / 10
+      sum = sum * 10 + a
+    }
+  }
+  reverse(1534236469)
+</script>
+
+<script type="xxx">
+  var isPowerOfThree = function (n) {
+    if (n == 0) {
+      return false
+    }
+    var a = 1
+    for (i = 1; i <= n; i++) {
+      if (a == n) {
+        return true
+      } else if (a != n) {
+        a = a * 3
+      }
+    }
+    return false
+  }
+  isPowerOfThree(27)
+</script>
+
+<script type="xxx">
+  debugger
+  var plusOne = function (digits) {
+    digits[digits.length - 1]++
+    for (i = digits.length - 1; i > 0; i--) {
+      if (digits[i] == 10) {
+        digits[i] = 0
+        digits[i - 1]++
+      } else {
+        return digits
+      }
+      if (digits[0] == 10) {
+        digits[0] == 0
+        digits.unshift(1)
+      }
+    }
+    return digits
+  }
+  plusOne([9])
+</script>
+
+<script type="xx">
+  /**
+   * @param {number} n
+   * @return {boolean}
+   */ debugger
+  var isHappy = function (n) {
+    var a = []
+
+    while (true) {
+      var sum = 0
+      while (n > 0) {
+        dight = n % 10
+        sum = sum + dight * dight
+        n = (n - dight) / 10
+      }
+      if (sum == 1) {
+        return true
+      } else {
+        for (i = 0; i < a.length; i++) {
+          if (sum == a[i])
+           return false
+        }
+        a.push(sum)
+        n = sum
+      }
+    }
+  }
+  isHappy(2)
+</script>
+
+<script type="xxx">
+  /**
+   * @param {number[]} numbers
+   * @param {number} target
+   * @return {number[]}
+   */ debugger
+  var twoSum = function (numbers, target) {
+    let left = 0
+    let right = numbers.length - 1
+    while (left < right) {
+      if (numbers[left] + numbers[right] > target) {
+        right -= 1
+      } else if (numbers[left] + numbers[right] < target) {
+        left += 1
+      } else return numbers[(left, right)]
+    }
+  }
+  twoSum([2, 7, 11, 15])
+</script>
+
+<script type="xxx">
+  debugger
+  var sortedSquares = function (nums) {
+    var newnums = []
+    var left1 = 0
+    var right1 = nums.length - 1
+
+    while (left1 <= right1) {
+      var right = nums[right1] * nums[right1]
+      var left = nums[left1] * nums[left1]
+
+      if (left <= right) {
+        newnums.unshift(right)
+        right1--
+      } else {
+        newnums.unshift(left)
+        left1++
+      }
+    }
+    return newnums
+  }
+  sortedSquares([-4, -1, 0, 3, 10])
+</script>
+
+<script type="xxx">
+  debugger
+  /**
+   * @param {number} n
+   * @return {number}
+   */
+  var countPrimes = function (n) {
+    var count = 0
+    for (i = 2; i < n; i++) {
+      if (aa(i)) {
+        count++
+      }
+      return count
+    }
+  }
+  function aa(x) {
+    for (i = 2; i <= Math.sqrt(x); i++) {
+      if (n % i == 0) {
+        return false
+      } else if (n < 2) {
+        return false
+      }
+    }
+    return true
+  }
+  countPrimes(10)
+</script>
+
+<script type="xxx">
+  debugger
+  var convertToBase7 = function (num) {
+    var a = ''
+    var number = 0
+    var z = true
+    var sum = num
+    if (sum < 0) {
+      sum = -sum
+      z = false
+    }
+    while (sum > 0) {
+      number = sum % 7
+      sum = (sum - number) / 7
+      a = String(number) + a
+    }
+    if (num < 0) {
+      return -a
+    } else {
+      return a
+    }
+  }
+  convertToBase7(-7)
+</script>
+
+<script type="xxx">
+  debugger
+  var mySqrt = function (x) {
+    let left = 0,
+      right = x,
+      nus = 0
+    while (left <= right) {
+      let mid = left + Math.floor((right - left) / 2)
+      if (mid * mid <= x) {
+        nus = mid
+        left = mid + 1
+      } else {
+        right = mid - 1
+      }
+    }
+    return nus
+  }
+  mySqrt(8)
+</script>
+
+<script type="xx">
+  debugger
+  var minimumTotal = function (triangle) {
+    var h = triangle.length
+    var small = 0
+    var aa = 0
+    const dp = new Array(h)
+    for (i = 0; i < h; i++) {
+      dp[i] = new Array(triangle[i].length)
+    }
+    for (i = h - 1; i >= 0; i--) {
+      for (j = 0; j < dp[i].length; j++) {
+        if (dp[j] > dp[j + 1]) {
+          small = dp[j + 1]
+        }
+      }
+      aa = small
+    }
+    return aa
+  }
+
+  minimumTotal([[2], [3, 4], [6, 5, 7], [4, 1, 8, 3]])
+</script>
+
+<script type="xxx">
+    function findSolution(numbers) {
+    var max = 0
+    var maxHistory = null
+
+    function find(x, y, sum, history) {
+      if (x == numbers.length - 1) { // 已经走到最后一行了
+        if (sum + numbers[x][y] > max) {
+          max = sum + numbers[x][y]
+          maxHistory = history
+        }
+        return
+      }
+      find(x + 1, y,     sum + numbers[x][y], history + '左')
+      find(x + 1, y + 1, sum + numbers[x][y], history + '右')
+    }
+
+    find(0, 0, 0, '')
+
+    return [max, maxHistory]
+  }
+
+
+
+  var numbers = [
+              [2],
+            [3, 1],
+          [9, 8, 4],
+        [7, 1, 5, 6],
+      [3, 0, 4, 9 ,8],
+    [10, 0, 0, 0, 0, 0],
+  [10, 0, 0, 0, 0, 0, 200],
+  ]
+
+
+  function maxSum(x, y) {
+    if (x == numbers.length - 1) {
+      return numbers[x][y]
+    }
+    return numbers[x][y] + Math.max(maxSum(x + 1, y), maxSum(x + 1, y + 1))
+  }
+</script>
+
+<script type="xx">
+  debugger
+  var minimumTotal = function (triangle) {
+    var h = triangle.length
+    const dp = new Array(h)
+    for (i = 0; i < h; i++) {
+      dp[i] = new Array(triangle[i].length)
+    }
+    for (i = h - 1; i >= 0; i--) {
+      for (j = 0; j < triangle[i].length; j++) {
+        if (i == h - 1) {
+          dp[i][j] = triangle[i][j]
+        } else {
+          dp[i][j] = Math.min(dp[i + 1][j], dp[i + 1][j + 1]) + triangle[i][j]
+        }
+      }
+    }
+    return dp[0][0]
+  }
+  minimumTotal([[2], [3, 4], [6, 5, 7], [4, 1, 8, 3]])
+</script>
+
+<script type="xxx">
+  debugger
+  var convertToTitle = function (columnNumber) {
+    let a = [
+      'Z',
+      'A',
+      'B',
+      'C',
+      'D',
+      'E',
+      'F',
+      'G',
+      'H',
+      'I',
+      'J',
+      'K',
+      'L',
+      'M',
+      'N',
+      'O',
+      'P',
+      'Q',
+      'R',
+      'S',
+      'T',
+      'U',
+      'V',
+      'W',
+      'X',
+      'Y',
+      'Z',
+    ]
+    let n = columnNumber
+    if (n <= 26) {
+      return a[n]
+    }
+    let i = ''
+    let c = ''
+    while (n > 26) {
+      i = a[n % 26]
+      n = Math.ceil(n / 26) - 1
+      c = i + c
+    }
+    c = a[n] + c
+    return c
+  }
+  convertToTitle(701)
+</script>
+
+<script type="xxx">
+  debugger
+  var intToRoman = function (num) {
+    let a = [
+      '1000',
+      '900',
+      '500',
+      '400',
+      '100',
+      '90',
+      '50',
+      '40',
+      '10',
+      '9',
+      '5',
+      '4',
+      '1',
+    ]
+    let b = [
+      'M',
+      'CM',
+      'D',
+      'CD',
+      'C',
+      'XC',
+      'L',
+      'XL',
+      'X',
+      'IX',
+      'V',
+      'IV',
+      'I',
+    ]
+    let ans = ''
+    for (let i = 0; i < a.length; i++) {
+      while (num >= a[i]) {
+        num = num - a[i]
+        ans = ans + b[i]
+      }
+      return ans
+    }
+  }
+  intToRoman(7)
+</script>
+
+<script type="xxx">
+  debugger
+  var sortedSquares = function(nums) {
+    var newnums = []
+    var left1 = 0
+    var right1 = nums.length - 1
+    while (left1 <= right1) {
+      var right = nums[right1] * nums[right1]
+      var left = nums[left1] * nums[left1]
+      if (left <= right) {
+        newnums.unshift(right)
+        right1--
+      } else {
+        newnums.unshift(left)
+        left1++
+      }
+    }
+    return newnums
+  }
+  sortedSquares([-4,-1,0,3,10])
+</script>
+
+<script type="xxx">
+  debugger
+  var generate = function (numRows) {
+    let count = [],
+      n = numRows
+    for (var i = 0; i < n; i++) {
+      count[i] = new Array(i + 1).fill(1)
+    }
+    if (n < 2) {
+      return count
+    }
+    for (var i = 2; i < count.length; i++) {
+      for (var j = 2; j < count[i].length - 1; j++) {
+        count[i][j] = count[i - 1][j - 1] + count[i - 1][j]
+      }
+    }
+    return count
+  }
+  generate(5)
+</script>
+
+<script type="xxx">
+  debugger
+  var checkPerfectNumber = function (num) {
+    let a = []
+    let sum = 0
+    for (var i = 0; i < num; i++) {
+      if (num % i == 0) {
+        a.push(i)
+      }
+    }
+    for (var j = 0; j < a.length; j++) {
+      sum = a[j] + sum
+    }
+    if ((sum = num)) {
+      return true
+    } else {
+      return false
+    }
+  }
+  checkPerfectNumber(100000000)
+</script>
+
+<script type="xxx">
+  debugger
+  var checkPerfectNumber = function (num) {
+    let sum = 0
+    if (num === 1) {
+      return false
+    }
+    for (var i = 2; i < Math.sqrt(num); i++) {
+      if (num % i == 0) {
+        // a.push(i)
+        sum += i + num / i
+      }
+    }
+    // for(var j = 0 ; j < a.length;j++){
+    //      sum = a[j] + sum
+    // }
+    return sum === num
+  }
+  checkPerfectNumber(28)
+</script>
+
+<script type="xxx">
+  debugger
+  var titleToNumber = function (columnTitle) {
+    let sum = 0
+    let n = columnTitle.length
+    for (var i = 0; i < n; i++) {
+      sum = sum * 26 + (columnTitle[i].charCodeAt() - 64)
+    }
+    return sum
+  }
+  titleToNumber('ZY')
+</script>
+
+<script type="xxx">
+  debugger
+  var singleNumber = function (nums) {
+    let res = 0
+    const n = nums.length
+    for (let i = 0; i < n; i++) {
+      res ^= nums[i]
+    }
+    return res
+  }
+
+  singleNumber([4, 1, 2, 1, 2])
+</script>
+
+<script type="xxxx">
+  debugger
+  var addStrings = function (nums) {
+    for (i = 0; i < nums.length + 1; i++) {
+      if (nums[i] > nums[i + 1]) {
+        let a = 0
+        a = nums[i + 1]
+        nums[i + 1] = nums[i]
+        nums[i] = a
+      }
+      if (nums[i] != i) {
+        return i
+      }
+    }
+  }
+  addStrings([0, 1])
+</script>
+
+<script type="xxx">
+  debugger
+  var missingNumber = function (nums) {
+    let n = nums.length
+    nums.sort((a, b) => a - b)
+    for (let i = 0; i < n; i++) {
+      if (nums[i] != i) {
+        return i
+      }
+    }
+    // return n
+  }
+  missingNumber([0, 1])
+</script>
+
+<script type="xxx">
+  debugger
+  var reverseList = function (head) {
+    let a = null
+    let b = head
+    while (b) {
+      let nxt = b.next
+      b.next = a
+      a = b
+      b = nxt
+    }
+    return a
+  }
+  reverseList([1, 2, 3, 4, 5])
+</script>
+
+<script>
+  function ListNode(val, next) {
+    this.val = val === undefined ? 0 : val
+    this.next = next === undefined ? null : next
+  }
+</script>
+<script type="xxx">
+  debugger
+  function ListNode(val, next) {
+    this.val = val === undefined ? 0 : val
+    this.next = next === undefined ? null : next
+  }
+  var addTwoNumbers = function (l1, l2) {
+    let node = new ListNode()
+    let curr = node
+    let jinwei = 0
+    while (l1 !== null || l2 !== null) {
+      let sum = 0
+      if (l1 !== null) {
+        sum = sum + l1.val
+        l1 = l1.next
+      }
+      if (l2 !== null) {
+        sum = sum + l2.val
+        l2 = l2.next
+      }
+      sum = sum + jinwei
+      curr.next = new ListNode(sum % 10)
+      jinwei = Math.floor(sum / 10)
+      curr = curr.next
+    }
+    if (jinwei > 0) {
+      curr.next = new ListNode(jinwei)
+    }
+    return node.next
+  }
+  addTwoNumbers([2, 4, 3][(5, 6, 4)])
+</script>
+
+<script type="">
+  debugger
+  var mergeTwoLists = function (list1, list2) {
+    let dummy = new ListNode()
+    let curr = dummy
+    let l1 = list1
+    let l2 = list2
+    while (l1 && l2) {
+      if (l1.val <= l2.val) {
+        curr.next = l1
+        l1 = l1.next
+      } else {
+        curr.next = l2
+        l2 = l2.next
+      }
+      curr = curr.next
+    }
+    if (l1) {
+      curr.next = l1
+    }
+    if (l2) {
+      curr.next = l2
+    }
+    return dummy.next
+  }
+  mergeTwoLists([1, 2, 4], [1, 3, 4])
+</script>
