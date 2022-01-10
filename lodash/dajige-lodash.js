@@ -38,4 +38,31 @@ var dajige = {
     }
     return rns
   },
+  dropRight: function (array, number) {
+    if (number == 0) {
+      return array
+    }
+    if (array.length < number) {
+      return []
+    }
+    let n = array.length
+    let m = n - number
+    let rns = []
+    for (let i = 0; i < m; i++) {
+      rns.push(array[i])
+    }
+    return rns
+  },
+  dropRightWhile: function (array) {
+    let rns = []
+    for (let i = 0; i < array.length; i++) {
+      if (array[i].active == true) {
+        rns.push(array[i])
+      } else {
+        break
+      }
+    }
+    return rns
+  },
+  dropWhile: function () {},
 }
