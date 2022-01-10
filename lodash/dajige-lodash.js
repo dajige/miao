@@ -38,7 +38,7 @@ var dajige = {
     }
     return rns
   },
-  dropRight: function (array, number) {
+  dropRight: function (array, number = 1) {
     if (number == 0) {
       return array
     }
@@ -53,16 +53,45 @@ var dajige = {
     }
     return rns
   },
-  dropRightWhile: function (array) {
+  dropRightWhile: function (array) {},
+  dropWhile: function (array) {},
+  fill: function (array, value, start = 0, end = array.length) {
+    for (i = start; i < end; i++) {
+      array[i] = value
+    }
+    return array
+  },
+  findindext: function () {},
+  findLastIndex: function () {},
+  flatten: function (array) {
     let rns = []
     for (let i = 0; i < array.length; i++) {
-      if (array[i].active == true) {
-        rns.push(array[i])
+      if (Array.isArray(array[i])) {
+        for (let j = 0; j < array[i].length; j++) {
+          rns.push(array[i][j])
+        }
       } else {
-        break
+        rns.push(array[i])
       }
     }
     return rns
   },
-  dropWhile: function () {},
+  flattenDeep: function (array) {
+    let rns = []
+    for (let i = 0; i < array.length; i++) {
+      if (Array.isArray(array[i])) {
+        for (let j = 0; j < array[i].length; j++) {
+          rns.push(array[i][j])
+        }
+      } else {
+        rns.push(array[i])
+      }
+    }
+    for (let i = 0; i < rns.length; i++) {
+      if (Array.isArray(rns[i])) {
+        rns = flattenDeep(rns)
+      }
+    }
+    return rns
+  },
 }
