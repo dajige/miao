@@ -178,7 +178,7 @@ var dajige = {
       if (i == array.length - 1) {
         str += array[i]
       } else {
-        str += array[i] + separator
+        str += array[i] + '' + separator
       }
     }
     return str
