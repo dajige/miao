@@ -145,8 +145,6 @@ var dajige = {
     for (let i = 0; i < array.length; i++) {
       if (!rns.includes(array[i])) {
         rns.push(array[i])
-      } else {
-        break
       }
     }
     return rns
