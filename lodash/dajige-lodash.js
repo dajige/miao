@@ -114,9 +114,7 @@ var dajige = {
   fromPairs: function fromPairs(pairs) {
     let ans = {}
     for (let i = 0; i < pairs.length; i++) {
-      for (let j = 0; j < pairs[i].length; j++) {
-        ans[pairs[i][j]] = pairs[i][j + 1]
-      }
+      ans[pairs[i][0]] = pairs[i][1]
     }
     return ans
   },
@@ -173,5 +171,16 @@ var dajige = {
       rns.push(aaa)
     }
     return rns
+  },
+  join: function join(array, separator = ',') {
+    let str = ''
+    for (let i = 0; i < array.length; i++) {
+      if (i == array.length - 1) {
+        str += array[i]
+      } else {
+        str += array[i] + separator
+      }
+    }
+    return str
   },
 }
