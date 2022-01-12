@@ -183,4 +183,27 @@ var dajige = {
     }
     return str
   },
+  last: function last(array) {
+    return array[array.length - 1]
+  },
+  lastindexOF: function lastindexOF(
+    array,
+    value,
+    fromIndex = array.length - 1,
+  ) {
+    for (let i = fromIndex; i >= 0; i--) {
+      if (array[i] == value) {
+        return i
+      }
+    }
+    return -1
+  },
+  initial: function initial(array) {
+    let a = []
+    for (let i = 0; i < array.length - 1; i++) {
+      a.push(array[i])
+    }
+    return a
+  },
+  intersection: function intersection(...array) {},
 }
