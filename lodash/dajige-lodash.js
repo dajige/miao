@@ -94,11 +94,28 @@ var dajige = {
     }
     return rns
   },
+  flattenDepth: function flattenDepth(array, depth = 1) {
+    let rns = []
+    for (let i = 0; i < array.length; i++) {
+      if (Array.isArray(array[i])) {
+        for (let j = 0; j < array[i].length; j++) {
+          rns.push(array[i][j])
+        }
+      } else {
+        rns.push(array[i])
+      }
+    }
+    depth--
+    if (depth >= 0) {
+      rns = flattenDepth(rns, depth)
+    }
+    return rns
+  },
   fromPairs: function fromPairs(pairs) {
     let ans = {}
     for (let i = 0; i < pairs.length; i++) {
-      for (let j = 0; j < pairs[i].length; i++) {
-        ans[pairs[i][j]] = ans[[i][j + 1]]
+      for (let j = 0; j < pairs[i].length; j++) {
+        ans[pairs[i][j]] = pairs[i][j + 1]
       }
     }
     return ans
@@ -140,9 +157,20 @@ var dajige = {
   without: function without(array, ...value) {
     let rns = []
     for (let i = 0; i < array.length; i++) {
-      if (!array.includes(value[i])) {
-        rns.push(value[i])
+      if (!value.includes(array[i])) {
+        rns.push(array[i])
       }
+    }
+    return rns
+  },
+  zip: function zip(...array) {
+    let rns = []
+    for (let i = 0; i < array[0].length; i++) {
+      let aaa = []
+      for (let j = 0; j < array.length; j++) {
+        aaa.push(array[j][i])
+      }
+      rns.push(aaa)
     }
     return rns
   },
