@@ -106,7 +106,7 @@ var dajige = {
       }
     }
     depth--
-    if (depth >= 0) {
+    if (depth > 0) {
       rns = flattenDepth(rns, depth)
     }
     return rns
@@ -203,5 +203,52 @@ var dajige = {
     }
     return a
   },
-  intersection: function intersection(...array) {},
+  pull: function pull(array, ...value) {
+    for (let i = 0; i < array.length; i++) {
+      if (value.includes(array[i])) {
+        array.splice(i, 1)
+        i--
+      } else {
+        continue
+      }
+    }
+    return array
+  },
+  sample: function sample(array) {
+    let num = Math.floor(Math.random() * array.length)
+    return num
+  },
+  size: function size(collection) {
+    let a = 0
+    for (var i in collection) {
+      a++
+    }
+    return a
+  },
+  isBoolean: function isBoolean(array) {
+    if (typeof array === 'boolean') {
+      return true
+    } else {
+      return false
+    }
+  },
+  isEmpty: function isEmpty(value) {
+    for (var i in value) {
+      return false
+    }
+    return true
+  },
+  isNull: function isNull(value) {
+    return value === null
+  },
+  isNumber: function isNumber(value) {
+    return typeof value === 'number'
+  },
+  toArray: function toArray(value) {
+    let a = []
+    for (let key in value) {
+      a.push(array[key])
+    }
+    return a
+  },
 }
