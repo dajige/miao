@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      th,
+      td {
+        border-collapse: collapse;
+        border: 1px solid black;
+      }
+      .number,
+      .boolean {
+        color: blue;
+      }
+      .nil {
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function elt(tagName, ...children) {
+        var node = document.createElement(tagName)
+        for (var child of children) {
+          if (typeof child == 'string') {
+            child = document.createTextNode(child)
+          }
+          node.appendChild(child)
+        }
+        return node
+      }
+      function table(ary) {
+        var table = elt('table')
+        var thead = elt('thead')
+        var te = 'tr'
+        thead.appendChild(tr)
+        var keys = []
+        for (var obj of ary) {
+          keys.push(...Object.keys(obj))
+        }
+        var keys = Array.from(new Set(keys))
+        var th = elt('th', '(index)')
+        tr.appendChild(th)
+        for (var key of keys) {
+          th = elt('th', key)
+          tr.appendChild(th)
+        }
+        table.appendChild(thead)
+        var tbode = elt('tbody')
+        var i = 0
+        for (var obj of ary) {
+          var tr = elt('tr')
+          tr.appendChild(elt('td', String(i++)))
+          for (var key of keys) {
+            if (obj.hasOwnProperty(key)) {
+              if (typeof obj[key] == 'number') {
+                td = elt('td', String(obj[key]))
+                td.classList.add('number')
+                tr.appendChild(td)
+              } else if (typeof obj[key == 'string']) {
+                td = elt('td', '"' + obj[key] + '"')
+                td.classList.add('string')
+                tr.appendChild(td)
+              }
+            } else if (typeof obj[key] == 'boolean') {
+              td = elt('td', String(obj[key]))
+              td.classList.add('boolean')
+              tr.appendChild(td)
+            } else if (typeof obj[key] == null) {
+              td = elt('td', String(obj[key]))
+              td.classList.add('nil')
+              tr.appendChild(td)
+            } else {
+              tr.appendChild(elt('td'))
+            }
+          }
+          tbody.appendChild(tr)
+          table.appendChild(tbody)
+        }
+      }
+    </script>
+  </body>
+</html>

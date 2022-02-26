@@ -184,7 +184,7 @@ var dajige = {
   last: function last(array) {
     return array[array.length - 1]
   },
-  lastindexOF: function lastindexOF(
+  lastindexOf: function lastindexOf(
     array,
     value,
     fromIndex = array.length - 1,

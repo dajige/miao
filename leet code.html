@@ -771,3 +771,125 @@
   var greaterThan10 = greaterThan(10)
   console.log(greaterThan10(11))
 </script>
+
+<script>
+  function TreeNode(val, left, right) {
+    this.val = val === undefined ? 0 : val
+    this.left = left === undefined ? null : left
+    this.right = right === undefined ? null : right
+  }
+</script>
+
+<script type="xxx">
+  debugger
+  var maxDepth = function (root) {
+    if (root === null) {
+      return 0
+    } else {
+      let left = maxDepth(root.left)
+      let right = maxDepth(root.right)
+      return Math.max(left, right) + 1
+    }
+  }
+  maxDepth([3, 9, 20, null, null, 15, 7])
+</script>
+
+<script type="xxx">
+  debugger
+  var levelOrder = function (root) {
+    if (!root) return []
+    const res = []
+    const queue = [root]
+    while (queue.length) {
+      const levelSize = queue.length
+      const level = []
+      for (let i = 0; i < levelSize; i++) {
+        const n = queue.shift()
+        level.push(n.val)
+        n.left && queue.push(n.left)
+        n.right && queue.push(n.right)
+      }
+      res.push(level)
+    }
+    return res
+  }
+  levelOrder([3, 9, 20, null, null, 15, 7])
+</script>
+
+<script type="xxx">
+  debugger
+  var inorderTraversal = function (root) {
+    let res = []
+    function inorder(root) {
+      if (!root) {
+        return res
+      }
+      inorder(root.left)
+      res.push(root.val)
+      inorder(root.right)
+    }
+    inorder(root)
+    return res
+  }
+
+  inorderTraversal([1, null, 2, 3])
+</script>
+
+<script type="">
+  debugger
+  var buildTree = function (preorder, inorder) {
+    if (preorder.length == 0) {
+      return null
+    }
+    let root = new TreeNode(preorder[0])
+    let rootInorder = inorder.indexOf(root.val)
+    let leftInorder = inorder.slice(0, rootInorder)
+    let rightInorder = inorder.slice(rootInorder + 1)
+    let leftPreorder = preorder.slice(1, leftInorder.length + 1)
+    let rightPreorder = preorder.slice(leftInorder.length + 1)
+    root.left = buildTree(leftInorder, leftPreorder)
+    root.right = buildTree(rightInorder, rightPreorder)
+    return root
+  }
+  buildTree([3, 9, 20, 15, 7], [9, 3, 15, 20, 7])
+</script>
+
+<script type="xxx">
+  debugger
+  var longestCommonPrefix = function (strs) {
+    if (strs.length == 0) {
+      return ''
+    }
+    var ans = strs[0]
+    for (var i = 1; i < strs.length; i++) {
+      for (var j = 0; j < ans.length && j < strs[i].length; j++) {
+        if (ans[j] != strs[i][j]) {
+          break
+        }
+        ans = ans.substr(0, j)
+      }
+    }
+    return ans
+  }
+  longestCommonPrefix(['flower', 'flow', 'flight'])
+</script>
+
+<script type="xxx">
+  debugger
+  var lengthOfLastWord = function (s) {
+    var end = s.length - 1
+    var a = 0
+    for (var i = end; i >= 0; i--) {
+      if (s[i] == '' && a == 0) {
+        continue
+      }
+      if (s[i] != '') {
+        a++
+      }
+      if (s[i] == '') {
+        break
+      }
+    }
+    return a
+  }
+</script>

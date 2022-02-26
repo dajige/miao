@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      strong:nth-child(odd) {
+        background-color: #9fcfff;
+      }
+      strong:nth-child(even) {
+        background-color: #d5ebff;
+      }
+      strong:empty {
+        display: inline-block;
+        width: 2px;
+        height: 1em;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div>REGULAR EXPRESSION</div>
+    <input type="text" id="reinput" onkeyup="run()" />
+    <div>
+      <label>
+        g
+        <input type="checkbox" id="reflagsglobal" />
+      </label>
+      <label>
+        m
+        <input type="checkbox" id="reflagsmultiline" />
+      </label>
+      <label>
+        i
+        <input type="checkbox" id="reflagsignorecase" />
+      </label>
+      <label>
+        y
+        <input type="checkbox" id="reflagssticky" />
+      </label>
+    </div>
+    <div>TEST STRING</div>
+    <textarea id="textstringinput" cols="30" rows="10" onkeyup="run()">
+fffffff</textarea
+    >
+    <pre id="resultshow"></pre>
+
+    <script>
+      function run() {
+        var restr = reinput.value
+        var flags = getflags()
+        var textstring = textstringinput.value
+        if (restr.length == 0) {
+          resultshow.innerHTML = textstring
+          return
+        }
+        try {
+          var re = new RegExp(restr, flags)
+        } catch (e) {
+          if (e instanceof SyntaxError) {
+            resultshow.innerhtml = textstring
+            return
+          } else {
+            throw e
+          }
+        }
+
+        var resulthtml = ''
+        var startidx = 0
+        var match
+        while ((match = re.exec(textstring))) {
+          resulthtml += textstring.slice(startidx, match.index)
+          resulthtml += '<strong>' + match[0] + '</strong>'
+          startidx = re.lastIndex
+          if (match.length == '') {
+            re.lastIndex++
+          }
+          if (!re.global) {
+            break
+          }
+        }
+        resulthtml += textstring.slice(startidx)
+        resultshow.innerHTML = resulthtml
+      }
+
+      run()
+      function getflags() {
+        var flags = ''
+        if (reflagsglobal.checked) {
+          flags += 'g'
+        }
+        if (reflagsmultiline.checked) {
+          flags += 'm'
+        }
+        if (reflagsignorecase.checked) {
+          flags += 'i'
+        }
+        if (reflagssticky.checked) {
+          flags += 'y'
+        }
+        return flags
+      }
+    </script>
+  </body>
+</html>
