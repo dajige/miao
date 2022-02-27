@@ -1,0 +1,289 @@
+<script>
+  var str = 'c{3}d{3,5}e{3,}f+'
+  var i = 0
+  function parseOnePart() {
+    // 解析
+    if (str[i] == '[') {
+      return parseCharacterClass() //中括号
+    }
+    if (str[i] == '(') {
+      return parseCaptureGroup() //小括号
+    }
+    if (str[i] == '\\') {
+      return parseEscape()
+    }
+    if (str[i] == '?' || str[i] == '+' || str[i] == '*' || str[i] == '{') {
+      return parseQuantifier() //?+*{
+    }
+    return parseCharacter() //字母
+  }
+  function parseCharacter() {
+    if (str[i] == '\\') {
+      return parseEscape()
+    }
+    var node = {
+      type: 'parseCharacter',
+      start: i,
+      end: i + 1,
+      raw: str.slice(i, i + 1),
+      value: str[i],
+    }
+    i++
+    return node
+  }
+  function parseCharacterClass() {
+    var node = {
+      type: 'parseCharacterClass',
+      start: i,
+      end: 0,
+      raw: '',
+      revert: false,
+      elements: [],
+      value: str[i],
+    }
+    i++
+    if (str[i] == '^') {
+      node.revert = true
+      i++
+    }
+    while (str[i] !== ']') {
+      var a = parseCharacter()
+      if (str[i] == '-') {
+        i++
+        if (str[i] == ']') {
+          node.elements.push(a)
+          i--
+          var a = parseCharacter()
+          node.elements.push(a)
+        } else {
+          var a2 = parseCharacter()
+          var rangeNode = {
+            type: 'CharacterRange',
+            start: a.start,
+            end: a2.start,
+            raw: str.slice(a.start, a2.start),
+            start2: a,
+            end2: a2,
+          }
+          node.elements.push(rangeNode)
+        }
+      } else {
+        node.elements.push(a)
+      }
+    }
+    i++
+    node.end = i
+    node.row = str.slice(node.start, node.end)
+    return node
+  }
+
+  function parseQuantifier() {
+    var node = {
+      type: 'Quantifier',
+      start: i,
+      end: 0,
+      element: null,
+      min: 0,
+      raw: '',
+      max: Infinity,
+      greedy: true,
+    }
+    if (str[i] == '?') {
+      node.max = 1
+      i++
+    } else if (str[i] == '+') {
+      node.min = 1
+      i++
+    } else if (str[i] == '*') {
+      i++
+    } else {
+      i++
+      skipSpace()
+      node.min = parseInteger()
+      skipSpace()
+      if (str[i] == '}') {
+        node.max = node.min
+        i++
+      } else if (str[i] == ',') {
+        i++
+        skipSpace()
+        if (str[i] == '}') {
+          i++
+        } else {
+          node.max = parseIntger()
+          skipSpace()
+          i++
+        }
+      }
+    }
+    if (str[i] == '?') {
+      node.greedy = false
+      i++
+    }
+    node.end = i
+    node.raw = str.slice(node.start, node.end)
+    return node
+  }
+  function skipSpace() {
+    while (str[i] == ' ') {
+      i++
+    }
+  }
+
+  function parseInteger() {
+    var numStr = ''
+    while (str[i] >= '0' && str[i] <= '9') {
+      numStr += str[i]
+      i++
+    }
+    return parseInt(numStr)
+  }
+
+  function parseBranch() {
+    var node = {
+      type: 'Branch',
+      start: i,
+      end: 0,
+      raw: '',
+      elements: [],
+    }
+    while (str[i] !== '|' && str[i] !== ')' && i < str.length) {
+      var part = parseOnePart()
+      if (part.type == 'Quantifier') {
+        part.element = node.elements.pop()
+        part.start = part.elements.start
+        part.raw = str.slice(part.start, part.end)
+      }
+      node.elementS.push(part)
+    }
+    node.end = i
+    node.raw = str.slice(node.start, node.end)
+    return node
+  }
+  function parseBranches() {
+    var nodes = []
+    while (true) {
+      var branch = parseBranch
+      nodes.push(branch)
+      if (str[i] == '|') {
+        i++
+        continue
+      }
+      if (str[i] == ')' || i >= str.length) {
+        break
+      }
+    }
+    return nodes
+  }
+  //（foo）
+  //(?:foo)
+  //(?=foo)正预测
+  //(?!foo)负预测
+  //(?<=foo)正回顾
+  //(?<!foo)负回顾
+  //(?<name>foo)具名分组
+  //
+  var groupIndex = 1
+  function parseCaptureGroup() {
+    var node = {
+      type: 'CaptureGroup',
+      start: i,
+      end: 0,
+      raw: '',
+      branchs: null,
+      index: 0, //分组编号
+      name: '', //分组名字
+      assertion: false, //是否是零宽断言
+      lookahead: true, //预测断言，反之是回顾断言
+      positive: true, //断言类型，正断言还是反断言
+    }
+    i++ //skip (
+    if (str[i] == '?') {
+      i++
+      if (str[i] == ':') {
+        //非捕获分组
+        i++
+      } else if (str[i] == '=') {
+        //正预测
+        node.assertion = true
+        node.lookahead = true
+        node.positive = true
+        i++
+      } else if (str[i] == '!') {
+        //负预测
+        node.assertion = true
+        node.lookahead = true
+        node.positive = false
+        i++
+      } else if (str[i] == '<') {
+        //回顾断言或者具名分组
+        i++
+        if (str[i] == '=') {
+          //正回顾断言
+          node.assertion = true
+          node.lookahead = false
+          node.positive = true
+          i++
+          node.assertion = true
+        } else if (str[i] == '!') {
+          //负回顾断言
+          node.assertion = true
+          node.lookahead = false
+          node.positive = false
+          i++
+        } else {
+          //具名分组
+          node.name = parseGroupName()
+          node.index = groupIndex++
+          i++
+        }
+      }
+    } else {
+      node.index = groupIndex++
+    }
+
+    node.branchs = parseBranches()
+    i++
+    node.end = i
+    node.raw = str.slice(node.start, node.end)
+    return node
+  }
+
+  function parseGroupName() {
+    var name = ''
+    while (str[i] !== '>') {
+      name += str[i]
+      i++
+    }
+    return name
+  }
+
+  function parseEscape() {
+    var node = {
+      type: 'Escape',
+      start: i,
+      end: 0,
+      raw: '',
+      value: '',
+    }
+    i++
+    node.value = str[i]
+    i++
+    node.end = i
+    node.raw = str.slice(node.start, node.end)
+    return node
+  }
+  function parsePattern() {
+    var node = {
+      type: 'Pattern',
+      branches: parseBranches(),
+    }
+    return node
+  }
+  function parseRegularExpression(input) {
+    var str = input
+    var i = 0
+    groupIndex = 0
+    return parsePattern()
+  }
+</script>
