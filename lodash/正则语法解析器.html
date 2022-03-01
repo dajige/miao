@@ -1,3 +1,9 @@
+<style>
+  svg {
+    border: 2px solid black;
+  }
+</style>
+<svg width="5000px" height="5000px"></svg>
 <script>
   var str = 'c{3}d{3,5}e{3,}f+'
   var i = 0
@@ -285,5 +291,47 @@
     var i = 0
     groupIndex = 0
     return parsePattern()
+  }
+  //为正则语法树节点创建图形
+  function createGraph(node) {
+    if (node.type == 'Character') {
+      return createCharacterGraph(node)
+    }
+    if (node.type == 'CharacterClass') {
+      return createCharacterClassGraph(node)
+    }
+    if (node.type == 'Branch') {
+      return createBranchGraph(node)
+    }
+    if (node.type == 'Brancher') {
+      return createBrancherGraph(node)
+    }
+    if (node.type == 'CaptureGroup') {
+      return createCaptureGroupGraph(node)
+    }
+    if (node.type == 'Quantifier') {
+      return createQuantifierGraph(node)
+    }
+    if (node.type == 'Ecape') {
+      return createEcapeGraph(node)
+    }
+  }
+  function elt(tagName, attrs = {}, ...children) {
+    var el = document.createElementNS('http://www.w3.org/2000/svg', tagName)
+  }
+  var svg = document.querySelector('svg')
+  function createCharacterGraph(node) {
+    var text = document.createElementNS('http://www.w3.org/2000/svg', 'text')
+    text.textContent = node.value
+    text.setAttribute('dominant-baseline', 'text-before-edge')
+    var g = document.createElement('g')
+    g.appendChild(text)
+    svg.appendChild(g)
+    var box = g.getBBox()
+    return {
+      g: g,
+      width: box.width,
+      height: box.height,
+    }
   }
 </script>

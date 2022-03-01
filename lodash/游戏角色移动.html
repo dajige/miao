@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      span {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: black;
+      }
+      body {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <span style="left: 0; top: 0;"></span>
+
+    <script>
+      var span = document.querySelector('span')
+      var vx = 0
+      var vy = 0
+      var d = 150
+
+      var leftDown = false
+      var rightDown = false
+      var upDown = false
+      var downDown = false
+
+      window.addEventListener('keydown', function (e) {
+        console.log(e.code)
+
+        if (e.code.startsWith('Shift')) {
+          d = 250
+          if (vx < 0) {
+            vx = -250
+          } else if (vx > 0) {
+            vx = 250
+          }
+        }
+
+        if (e.code == 'ArrowLeft') {
+          leftDown = true
+          vx = -d
+        }
+        if (e.code == 'ArrowRight') {
+          rightDown = true
+          vx = d
+        }
+
+        if (e.code == 'ArrowUp') {
+          upDown = true
+          vy = -d
+        }
+        if (e.code == 'ArrowDown') {
+          downDown = true
+          vy = d
+        }
+      })
+      window.addEventListener('keyup', function (e) {
+        console.log(e.code)
+
+        if (e.code.startsWith('Shift')) {
+          d = 150
+          if (vx < 0) {
+            vx = -150
+          } else if (vx > 0) {
+            vx = 150
+          }
+        }
+        if (e.code == 'ArrowLeft') {
+          leftDown = false
+          if (rightDown) {
+            vx = d
+          } else {
+            vx = 0
+          }
+        }
+        if (e.code == 'ArrowRight') {
+          rightDown = false
+          if (leftDown) {
+            vx = -d
+          } else {
+            vx = 0
+          }
+        }
+
+        if (e.code == 'ArrowUp') {
+          upDown = false
+          if (downDown) {
+            vy = d
+          } else {
+            vy = 0
+          }
+        }
+        if (e.code == 'ArrowDown') {
+          downDown = false
+          if (upDown) {
+            vy = -d
+          } else {
+            vy = 0
+          }
+        }
+      })
+
+      var lastTime = null
+
+      requestAnimationFrame(function ani(time) {
+        var timeDiff = 0
+        if (lastTime !== null) {
+          timeDiff = (time - lastTime) / 1000
+        } else {
+          timeDiff = 0
+        }
+
+        var dx = timeDiff * vx
+        span.style.left = parseInt(span.style.left) + dx + 'px'
+
+        var dy = timeDiff * vy
+        span.style.top = parseInt(span.style.top) + dy + 'px'
+
+        lastTime = time
+
+        requestAnimationFrame(ani)
+      })
+    </script>
+  </body>
+</html>
