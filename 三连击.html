@@ -1,0 +1,20 @@
+<script>
+  var lasttime = 0
+  var cont = 1
+  window.addEventListener('click', function (e) {
+    var now = Date.now()
+    console.log(1)
+    if (now - lasttime < 600) {
+      cont++
+    } else {
+      cont = 1
+    }
+    if (cont == 2) {
+      console.log(2)
+    }
+    if (cont == 3) {
+      console.log(3)
+    }
+    lasttime = now
+  })
+</script>

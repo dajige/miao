@@ -1,0 +1,35 @@
+<textarea></textarea>
+<script>
+  var textarea = document.querySelector('textarea')
+  var timeout
+  textarea.addEventListener(
+    'keydown',
+    b(function () {
+      console.log(1)
+    }, 500),
+  )
+
+  function a(fun, time) {
+    var timeout
+    return function () {
+      clearTimeout(timeout)
+      timeout = setTimeout(fun, time)
+    }
+  }
+
+  function b(fun, time) {
+    var timeout
+    var 有无安排 = false
+    var event
+    return function (e) {
+      event = e
+      if (!有无安排) {
+        有无安排 = true
+        timeout = setTimeout(() => {
+          fun(event)
+          有无安排 = false
+        }, time)
+      }
+    }
+  }
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <script>
+      var textarea = document.querySelector('textarea')
+      textarea.addEventListener('keydown', function (e) {
+        if (e.key == 'Q' || e.key == 'W' || e.key == 'X') {
+          e.preventDefault()
+        }
+      })
+      textarea.addEventListener('paste', function (e) {
+        e.preventDefault()
+        var text = e.clipboardData.getData('text')
+        text = text.replace(/[QWX]/g, '*')
+        var a = textarea.value.slice(0, textarea.selectionStart)
+        var b = textarea.value.slice(textarea.selectionEnd)
+        textarea.value = a + text + b
+        textarea.selectionStart = textarea.selectionEnd = a.length + text.length
+      })
+      var valDescriptor = Object.getOwnPropertyDescriptor(
+        Object.getPrototypeOf(textarea),
+        'value',
+      )
+      Object.defineProperty(textarea, 'value', {
+        get: function () {
+          return valDescriptor.get.call(this)
+        },
+        set: function (val) {
+          val = val.toString().replace(/[QWX]/g, '*')
+          valDescriptor.set.call(this, val)
+        },
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<div
+  class="ragable"
+  style="width: 100px; height: 100px; left: 0; top: 0; background-color: pink;"
+>
+  <span class="win-title">播放器窗口</span>
+  <span class="win-resize"></span>
+</div>
+
+<div
+  class="ragable"
+  style="
+    width: 100px;
+    height: 100px;
+    left: 0;
+    top: 0;
+    background-color: yellowgreen;
+  "
+>
+  <span class="win-title">浏览器窗口</span>
+  <span class="win-resize"></span>
+</div>
+
+<div
+  class="ragable"
+  style="width: 100px; height: 100px; left: 0; top: 0; background-color: aqua;"
+>
+  <span class="win-title">聊天</span>
+  <span class="win-resize"></span>
+</div>
+<style>
+  .ragable {
+    width: 100px;
+    height: 100px;
+    border: 2px solid;
+    position: fixed;
+  }
+  .win-title {
+    display: block;
+    background-color: #0078d7;
+    color: white;
+    font-weight: bold;
+    cursor: move;
+  }
+  .wIn-resize {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: red;
+    bottom: 0;
+    right: 0;
+    margin-bottom: -2px;
+    margin-right: -2px;
+    cursor: nwse-resize;
+  }
+</style>
+<script>
+  var startx
+  var starty
+  var nodex
+  var nodey
+  var movenode
+  var maxzindex = 4
+  var nodewidth
+  var nodeheight
+  var state = ''
+  var resizenode
+  document.addEventListener('mousedown', function (e) {
+    var title = e.target.closest('.win-title')
+    startx = e.clientX
+    starty = e.clientY
+    if (title) {
+      state = 'moving'
+      movenode = title.closest('.ragable')
+      nodex = parseInt(movenode.style.left)
+      nodey = parseInt(movenode.style.top)
+      window.addEventListener('mousemove', move)
+    }
+    if (e.target.matches('.win-resize')) {
+      state = 'resizing'
+      resizingnode = e.target.closest('.ragable')
+      nodewidth = parseInt(resizingnode.style.Width)
+      nodeheight = parseInt(resizingode.style.height)
+      window.addEventListener('mousemove', move)
+    }
+    if (e.target.closest('.ragable')) {
+      e.target.closest('.ragable').style.zIndex = maxzindex++
+    }
+  })
+  function move(e) {
+    if (e.which == 0) {
+      window.removeEventListener('mousemove', move)
+    } else {
+      if (state == 'moving') {
+        var dx = e.clientX - startx
+        var dy = e.clientY - starty
+        var left = nodex + dx
+        var top = nodey + dy
+        if (left < 0) {
+          left = 0
+        }
+        if (top < 0) {
+          top = 0
+        }
+        if (left > innerWidth - movenode.offsetWidth) {
+          left = innerWidth - movenode.offsetWidth
+        }
+        if (top > innerHeight - movenode.offsetHeight) {
+          top = innerHeight - movenode.offsetHeight
+        }
+        movenode.style.left = left + 'px'
+        movenode.style.top = top + 'px'
+      }
+      if (state == 'resizing') {
+        var dx = e.clientX - startx
+        var dy = e.clientY - starty
+        resizingnode.style.width = nodewidth + dx + 'px'
+        resizingnode.style.height = nodeheight + dy + 'px'
+      }
+    }
+  }
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <div style="background: orange; width: 60px; height: 20px;"></div>
+  </head>
+  <body>
+    <script>
+      var lastX
+      var rect = document.querySelector('div')
+      rect.addEventListener('mousedown', function (e) {
+        if (e.which == '1') {
+          lastX = e.pageX
+          addEventListener('mousemove', moved)
+          e.preventDefault()
+        }
+      })
+      function moved(e) {
+        if (e.which != '1') {
+          removeEventListener('mousemove', moved)
+        } else {
+          var diff = e.pageX - lastX
+          var newwidth = rect.offsetWidth + diff
+          rect.style.width = Math.max(10, newwidth) + 'px'
+          lastX = e.pageX
+        }
+      }
+    </script>
+  </body>
+</html>

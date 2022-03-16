@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      height: 200px;
+      background-color: beige;
+    }
+    .dot {
+      width: 80px;
+      height: 80px;
+      border-radius: 9999px;
+      background-color: violet;
+      position: absolute;
+    }
+    html {
+      user-select: none;
+    }
+    svg {
+      border: 2px solid;
+    }
+  </style>
+  <body>
+    svg
+    <svg width=" 800px"></svg>
+    <script>
+      var svg = document.querySelector('svg')
+      var lastX, lastY
+      svg.addEventListener('mousedown', function (e) {
+        if (e.which == 1) {
+          var pos = mouse(svg)
+          var lastX = pos.x
+          var lastY = pos.y
+          svg.addEventListener('mousemove', move)
+          e.preventDefault()
+        }
+      })
+
+      function a(event) {
+        if (event.buttons == null) {
+          return event.which !== 0
+        } else {
+          return event.buttons !== 0
+        }
+      }
+      function move(e) {
+        if (!a(e)) {
+          svg.removeEventListener('mousedown', move)
+          return
+        }
+        var line = document.createElementNS(
+          'http:http://www.w3.org/2000/svg',
+          'line',
+        )
+
+        svg.append(dot)
+      }
+      function mouse(node) {
+        var nodepos = node.getBoundingClientRect()
+        return {
+          x: window.event.clientX - nodepos.x,
+          y: window.event.clientY - nodepos.y,
+        }
+      }
+    </script>
+  </body>
+</html>
