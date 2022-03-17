@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .fire {
+        position: fixed;
+        border-radius: 999px;
+        background-color: red;
+        width: 20px;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <span class="fire"></span>
+    <span class="fire"></span>
+    <span class="fire"></span>
+    <script>
+      var spans = document.querySelectorAll('.fire')
+      var mx = 0
+      var my = 0
+      addEventListener('mousemove', function (e) {
+        mx = e.clientX
+        my = e.clientY
+        var span = document.createElement('span')
+        span.textContent = '*'
+        span.style.color = `hsl(${Math.random() * 360},80%,80%)`
+        span.style.left = mx + 'px'
+        span.style.top = my + 'px'
+        span.style.position = 'fixed'
+        document.body.appendChild('span')
+      })
+      requestAnimationFrame(function ani(time) {
+        var angleDiff = (2 * Math.PI) / spans.length
+        var angle = time * 0.01
+        var r = 150
+        for (var i = 0; i < spans.length; i++) {
+          var x = Math.sin(angle) * r + mx
+          var y = Math.cos(angle) * r + my
+          spans[i].style.left = x + 'px'
+          spans[i].style.top = y + 'px'
+          angle += angleDiff
+        }
+        requestAnimationFrame(ani)
+      })
+    </script>
+  </body>
+</html>

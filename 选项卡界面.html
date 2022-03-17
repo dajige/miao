@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div data-tabname="About">aa</div>
+      <div data-tabname="详情">bb</div>
+      <div data-tabname="关于">cc</div>
+    </div>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      var div = document.querySelector('div')
+      asTabs(div)
+      function asTabs(node) {
+        return $(node)
+          .children()
+          .hide()
+          .map(function () {
+            var div = this
+            return $('<button></button>')
+              .text(this.dataset.tabname)
+              .click(function () {
+                $(this)
+                  .css('color', 'red')
+                  .siblings('button')
+                  .css('color', 'black')
+                $(div).show().siblings('div').hide()
+              })[0]
+          })
+          .prependTo(node)
+          .first()
+          .click()
+      }
+    </script>
+  </body>
+</html>
