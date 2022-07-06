@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="world"></div>
+    <div>
+      <button onclick="next()">下一轮</button>
+      <button onclick="random()">随机</button>
+    </div>
+  </body>
+  <script>
+    var worldDiv = document.querySelector('#world')
+    var world = Array(height)
+      .fill(0)
+      .map((it) => Array(width).fill(0))
+    var width = 10
+    var height = 10
+
+    function displayWorld() {
+      worldDiv.innerHTML = world
+        .map((row) => {
+          return `
+            <div>
+                ${row
+                  .map((cell) => {
+                    if (cell) {
+                      return `<input type="checkbox" checked>`
+                    } else {
+                      return `<input type="checkbox">`
+                    }
+                  })
+                  .join('')}
+                </div>`
+        })
+        .join('')
+    }
+    displayWorld()
+    function random(ratio = 0.1) {
+      for (var row of world) {
+        for (var idx in row) {
+          if (Math.random() < ratio) {
+            row[idx] = 1
+          }
+        }
+      }
+      displayWorld()
+    }
+    function next() {}
+  </script>
+</html>
