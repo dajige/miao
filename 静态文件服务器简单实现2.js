@@ -2,11 +2,13 @@ const http = require('http')
 const fs = require('fs')
 const path = require('path')
 const fsp = fs.promises
-const dir = '/MacBok/交作业的'
+const dir = '/user/MacBok/a'
 
 const server = http.createServer()
 server.on('request', (req, res) => {
-  const targetpath = path.join(dir, req.url)
+  var url = decodeURIComponent(req.url)
+  console.log(req.method, url)
+  const targetpath = path.join(dir, url)
   fs.readFile(targetpath, (err, date) => {
     if (err) {
       res.writeHead(400)
@@ -18,4 +20,4 @@ server.on('request', (req, res) => {
     }
   })
 })
-server.listen(80)
+server.listen(8000)
